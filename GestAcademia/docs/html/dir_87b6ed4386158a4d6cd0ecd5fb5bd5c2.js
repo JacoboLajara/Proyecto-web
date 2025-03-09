@@ -1,0 +1,27 @@
+var dir_87b6ed4386158a4d6cd0ecd5fb5bd5c2 =
+[
+    [ "AlumnosController.php", "_alumnos_controller_8php.html", "_alumnos_controller_8php" ],
+    [ "AulasController.php", "_aulas_controller_8php.html", "_aulas_controller_8php" ],
+    [ "buscarAlumno.php", "buscar_alumno_8php.html", "buscar_alumno_8php" ],
+    [ "buscarAulas.php", "buscar_aulas_8php.html", "buscar_aulas_8php" ],
+    [ "buscarPersonal.php", "buscar_personal_8php.html", "buscar_personal_8php" ],
+    [ "buscarProfesor.php", "buscar_profesor_8php.html", "buscar_profesor_8php" ],
+    [ "CursosController.php", "_cursos_controller_8php.html", "_cursos_controller_8php" ],
+    [ "getAlumno.php", "get_alumno_8php.html", "get_alumno_8php" ],
+    [ "getAlumnos.php", "get_alumnos_8php.html", "get_alumnos_8php" ],
+    [ "getAula.php", "get_aula_8php.html", "get_aula_8php" ],
+    [ "getCursos.php", "get_cursos_8php.html", "get_cursos_8php" ],
+    [ "getNotas.php", "get_notas_8php.html", "get_notas_8php" ],
+    [ "getPersonal.php", "get_personal_8php.html", "get_personal_8php" ],
+    [ "getProfesores.php", "get_profesores_8php.html", "get_profesores_8php" ],
+    [ "HorariosController.php", "_horarios_controller_8php.html", "_horarios_controller_8php" ],
+    [ "matricularAlumnos.php", "matricular_alumnos_8php.html", "matricular_alumnos_8php" ],
+    [ "MatriculasController.php", "_matriculas_controller_8php.html", "_matriculas_controller_8php" ],
+    [ "NotasController.php", "_notas_controller_8php.html", "_notas_controller_8php" ],
+    [ "NotificacionController.php", "_notificacion_controller_8php.html", "_notificacion_controller_8php" ],
+    [ "PersonalController.php", "_personal_controller_8php.html", "_personal_controller_8php" ],
+    [ "ProfesoresController.php", "_profesores_controller_8php.html", "_profesores_controller_8php" ],
+    [ "RecibosController.php", "_recibos_controller_8php.html", "_recibos_controller_8php" ],
+    [ "test.php", "test_8php.html", null ],
+    [ "UserController.php", "_user_controller_8php.html", "_user_controller_8php" ]
+];

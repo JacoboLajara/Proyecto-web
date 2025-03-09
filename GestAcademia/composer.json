@@ -1,0 +1,12 @@
+{
+    "name": "jacobo/web-proyecto",
+    "version": "1.0.0",
+    "config": {
+        "allow-plugins": {
+            "symfony/flex": true
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "10.0"
+    }
+}

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: profesores.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: profesores.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Valida el formulario comprobando que los campos cumplen ciertas condiciones.
+ * Se verifica que:
+ * - El nombre tenga más de dos caracteres.
+ * - La dirección tenga más de 10 caracteres.
+ * - El teléfono tenga 9 caracteres.
+ * - Se proporcione una población (aunque solo sea recomendable).
+ * - Se hayan aceptado las condiciones.
+ *
+ * @returns {boolean} Devuelve `true` si el formulario es válido; en caso contrario, `false`.
+ */
+function Validar() { // Función para validar el formulario una vez esté relleno
+    var comprobado;
+
+    if (nombre.value.length &lt; 3) { // Valida que el campo nombre tenga más de dos caracteres
+        alert("Escriba mas de dos caracteres para su nombre");
+        comprobado = false;
+    }
+
+    if (direccion.value.length &lt; 9) { // Valida que el campo dirección tenga más de 10 caracteres
+        alert("La dirección  no puede estar vacia\n y ha de tener más de 10 caracteres");
+        comprobado = false;
+    }
+
+    if (Phone.value.length &lt; 9) { // Valida que el campo teléfono tenga 9 caracteres
+        alert("El Telfeono no puede estar vacio\n y ha de tener 9 caracteres");
+        comprobado = false;
+    }
+
+    if (poblacion.value.length &lt; 2) { // Recomienda introducir una población para tener más datos
+        alert("Sería recomendable que introdujese una población \n para poder tener más datos");
+        comprobado = false;
+    }
+
+    if (!condiciones.checked) { // Valida que se hayan aceptado las condiciones
+        alert("Debe de aceptar las condiciones")
+        comprobado = false;
+    }
+
+    alert("El formulario ha sido validado"); // Comprobación a posteriori
+    return comprobado;
+}
+
+
+/**
+ * Valida el email comprobando que cumple con el formato estándar.
+ * Se utiliza una expresión regular para asegurar que el email contiene al menos un "@" y un ".".
+ *
+ * @param {HTMLInputElement} mail - Elemento input que contiene el correo a validar.
+ */
+function ValidarMail(mail) { // Valida el mail comprobando que lleve "." y "@"
+    var emailRegex;
+
+    emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+
+    if (emailRegex.test(mail.value)) {
+        alert("mail valido");
+        mail.focus();
+        valido.innerText = "válido";
+    } else {
+        alert("mail no valido, introduza mail formato mail@server.com");
+        this.focus();
+        mail.select();
+    }
+}
+
+
+/**
+ * Comprueba si un campo de formulario está vacío y cambia su color de fondo.
+ * Si el campo está vacío, se resalta en rojo; si no, se muestra en blanco.
+ *
+ * @param {HTMLInputElement} obj - Elemento input a comprobar.
+ */
+function comprueba(obj) { // Función que comprueba que el objeto esté o no vacío y lo cambia de color
+    if (obj.value == '') {
+        if ((document.getElementById)) {
+            obj.style.backgroundColor = "red";
+        }
+    } else {
+        if ((document.getElementById)) {
+            obj.style.backgroundColor = "white";
+        }
+    }
+}
+
+
+/**
+ * Prepara el modal para realizar una nueva búsqueda.
+ * Limpia el campo de búsqueda, elimina resultados anteriores y cierra cualquier backdrop o modal que pudiera interferir.
+ */
+function prellenarModal() {
+    // Limpiar el campo de búsqueda
+    document.getElementById('criterioBusqueda').value = '';
+
+    // Limpiar resultados anteriores
+    const tabla = document.getElementById('tablaResultados');
+    tabla.innerHTML = '';
+
+    // ✅ Asegurar que se eliminen posibles backdrop anteriores
+    document.querySelectorAll('.modal-backdrop').forEach(backdrop => backdrop.remove());
+    document.body.classList.remove('modal-open');
+    document.body.style.overflow = 'auto';
+}
+
+
+/**
+ * Busca registros de profesores según el criterio de búsqueda ingresado.
+ * Realiza una solicitud POST al servidor y muestra los resultados en una tabla.
+ */
+function buscarRegistros() {
+    const criterio = document.getElementById('criterioBusqueda').value.trim();
+
+    console.log(`Criterio de búsqueda: ${criterio}`);
+
+    fetch('/../../controllers/buscarProfesor.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ criterio })
+    })
+        .then(response => {
+            console.log('Respuesta recibida:', response);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Datos recibidos:', data);
+            const tabla = document.getElementById('tablaResultados');
+            tabla.innerHTML = ''; // Limpiar resultados previos
+
+            if (data.length === 0) {
+                alert("No se encontraron registros de profesores."); // Muestra alerta si no hay registros
+            } else {
+                data.forEach(registro => {
+                    console.log('Registro:', registro);
+                    const fila = `
+                &lt;tr>
+                    &lt;td>${registro.ID_Profesor}&lt;/td>
+                    &lt;td>${registro.Nombre}&lt;/td>
+                    &lt;td>${registro.Apellido1}&lt;/td>
+                    &lt;td>
+                        &lt;button type="button" class="btn btn-success" onclick="seleccionarRegistro('${registro.ID_Profesor}')">
+                            Seleccionar
+                        &lt;/button>
+                    &lt;/td>
+                &lt;/tr>`;
+                    tabla.innerHTML += fila;
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error en la solicitud:', error);
+            alert(`Error: ${error.message}`);
+        });
+}
+
+
+/**
+ * Selecciona un registro de profesor y rellena el formulario principal con sus datos.
+ * También actualiza el enlace para ver la ficha completa del profesor y cierra el modal de búsqueda.
+ *
+ * @param {string} id - Identificador del profesor a seleccionar.
+ */
+function seleccionarRegistro(id) {
+    console.log(`🟢 ID recibido en seleccionarRegistro: ${id}`); // &lt;-- DEBUG
+
+    const url = `/../../controllers/getProfesores.php?id=${id}`;
+    console.log(`🟢 URL generada: ${url}`);
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            console.log('🟢 Datos recibidos:', data);
+
+            if (!data.ID_Profesor) {
+                console.error("🔴 Error: El objeto `data` no contiene ID_Profesor");
+                return;
+            }
+
+            // Rellenar los campos del formulario principal
+            document.getElementById('nombre').value = data.Nombre;
+            document.getElementById('apellido1').value = data.Apellido1;
+            document.getElementById('apellido2').value = data.Apellido2;
+            document.getElementById('id_profesor').value = data.ID_Profesor;
+            document.getElementById('direccion').value = data.Direccion;
+            document.getElementById('poblacion').value = data.Poblacion;
+            document.getElementById('provincia').value = data.Provincia;
+            document.getElementById('cpostal').value = data.Codigo_Postal;
+            document.getElementById('Phone').value = data.Telefono;
+            document.getElementById('mail').value = data.Email;
+            document.getElementById('fechanac').value = data.Fecha_Nacimiento;
+            document.getElementById('fechalta').value = data.Fecha_Alta;
+            document.getElementById('estudios').value = data.Nivel_Estudios;
+
+            // Cerrar el modal correctamente
+            const modalElement = document.getElementById('modalBuscar');
+            const modalInstance = bootstrap.Modal.getInstance(modalElement);
+            if (modalInstance) {
+                modalInstance.hide();
+            }
+
+            // Eliminar backdrop y clases que bloqueen el UI
+            document.querySelector('.modal-backdrop')?.remove();
+            document.body.classList.remove('modal-open');
+            document.body.style.overflow = 'auto'; // Asegurar que el scroll esté habilitado
+            
+            // ✅ ACTUALIZAR EL ENLACE EN LA SIDEBAR
+            const enlaceFicha = document.getElementById('verFichaProfesor');
+            if (enlaceFicha) {
+                enlaceFicha.href = `/listados/listadoDetalleProfesores.php?id=${data.ID_Profesor}`;
+                enlaceFicha.style.display = "block"; // Asegurar que se muestra
+                console.log(`🟢 Enlace actualizado: ${enlaceFicha.href}`);
+            } else {
+                console.error("🔴 Error: No se encontró el elemento 'verFichaProfesor'");
+            }
+        })
+        .catch(error => console.error('🔴 Error en la solicitud:', error));
+}
+
+
+/**
+ * Deshabilita todos los campos del formulario de profesores.
+ * Selecciona todos los inputs, selects y textareas dentro del fieldset del formulario y los desactiva.
+ */
+function disableFormFieldsProf() {
+    const fields = document.querySelectorAll('#formProfesor fieldset input, #formProfesor fieldset select, #formProfesor fieldset textarea');
+
+    fields.forEach(function (field) {
+        field.disabled = true;
+    });
+}
+
+
+/**
+ * Habilita todos los campos del formulario de profesores.
+ * Permite que el usuario edite los inputs, selects y textareas del formulario.
+ */
+function enableFormFieldsProf() {
+    const fields = document.querySelectorAll('#formProfesor input, #formProfesor select, #formProfesor textarea');
+    fields.forEach(function (field) {
+        field.disabled = false;
+    });
+}
+
+
+/**
+ * Configura el formulario para insertar un nuevo profesor.
+ * Realiza lo siguiente:
+ * - Reinicia el formulario.
+ * - Habilita los campos para poder editar.
+ * - Muestra el botón de insertar y oculta el de modificar.
+ * - Actualiza el título del formulario y el valor oculto "accion".
+ * - Desplaza la vista hacia el formulario.
+ */
+function mostrarInsertarProf() {
+    // Reiniciamos el formulario
+    document.getElementById('formProfesor').reset();
+    // Habilitamos los campos
+    enableFormFieldsProf();
+    // Configuramos los botones: se muestra el de insertar y se oculta el de modificar
+    document.getElementById('btnInsertar').style.display = "inline-block";
+    document.getElementById('btnModificar').style.display = "none";
+    // Actualizamos el título del formulario y el campo oculto "accion"
+    document.getElementById('formTitulo').innerText = "Insertar Profesor";
+    document.getElementById('accion').value = "insert";
+    // Desplazamos la vista hacia el formulario
+    document.getElementById('formProfesor').scrollIntoView({ behavior: 'smooth' });
+}
+
+
+/**
+ * Configura el formulario para modificar un profesor existente.
+ * Realiza lo siguiente:
+ * - Habilita los campos para que sean editables.
+ * - Muestra el botón de modificar y oculta el de insertar.
+ * - Actualiza el título del formulario y el valor oculto "accion".
+ * - Desplaza la vista hacia el formulario.
+ */
+function mostrarModificarProf() {
+    // Habilitamos los campos para modificar
+    enableFormFieldsProf();
+    // Configuramos los botones: se muestra el de modificar y se oculta el de insertar
+    document.getElementById('btnInsertar').style.display = "none";
+    document.getElementById('btnModificar').style.display = "inline-block";
+    // Actualizamos el título del formulario y el campo oculto "accion"
+    document.getElementById('formTitulo').innerText = "Modificar Profesor";
+    document.getElementById('accion').value = "update";
+    // Desplazamos la vista hacia el formulario
+    document.getElementById('formProfesor').scrollIntoView({ behavior: 'smooth' });
+}
+
+
+// Al cargar la página, deshabilitamos los campos del formulario de profesores.
+document.addEventListener('DOMContentLoaded', function () {
+    disableFormFieldsProf();
+});
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Events</h3><ul><li><a href="global.html#event:DOMContentLoaded">DOMContentLoaded</a></li><li><a href="global.html#event:change">change</a></li><li><a href="global.html#event:click">click</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Validar">Validar</a></li><li><a href="global.html#ValidarMail">ValidarMail</a></li><li><a href="global.html#actualizarLinkListadoRecibos">actualizarLinkListadoRecibos</a></li><li><a href="global.html#addModuloRow">addModuloRow</a></li><li><a href="global.html#addUnidadRow">addUnidadRow</a></li><li><a href="global.html#agregarModulo">agregarModulo</a></li><li><a href="global.html#agregarUnidad">agregarUnidad</a></li><li><a href="global.html#buscarRegistros">buscarRegistros</a></li><li><a href="global.html#cargarCurso">cargarCurso</a></li><li><a href="global.html#cargarRecibos">cargarRecibos</a></li><li><a href="global.html#comprueba">comprueba</a></li><li><a href="global.html#confirmarSeleccion">confirmarSeleccion</a></li><li><a href="global.html#currentCursoId">currentCursoId</a></li><li><a href="global.html#currentModuloId">currentModuloId</a></li><li><a href="global.html#deleteRow">deleteRow</a></li><li><a href="global.html#disableFormFieldsAulas">disableFormFieldsAulas</a></li><li><a href="global.html#disableFormFieldsPersonal">disableFormFieldsPersonal</a></li><li><a href="global.html#disableFormFieldsProf">disableFormFieldsProf</a></li><li><a href="global.html#eliminarModulo">eliminarModulo</a></li><li><a href="global.html#eliminarUnidad">eliminarUnidad</a></li><li><a href="global.html#enableFormFieldsAulas">enableFormFieldsAulas</a></li><li><a href="global.html#enableFormFieldsPersonal">enableFormFieldsPersonal</a></li><li><a href="global.html#enableFormFieldsProf">enableFormFieldsProf</a></li><li><a href="global.html#enviarATodos">enviarATodos</a></li><li><a href="global.html#guardarCambios">guardarCambios</a></li><li><a href="global.html#habilitarEdicion">habilitarEdicion</a></li><li><a href="global.html#modulosContainer">modulosContainer</a></li><li><a href="global.html#modulosTable">modulosTable</a></li><li><a href="global.html#mostrarDetallesCurso">mostrarDetallesCurso</a></li><li><a href="global.html#mostrarInsertarAulas">mostrarInsertarAulas</a></li><li><a href="global.html#mostrarInsertarPersonal">mostrarInsertarPersonal</a></li><li><a href="global.html#mostrarInsertarProf">mostrarInsertarProf</a></li><li><a href="global.html#mostrarModalSeleccion">mostrarModalSeleccion</a></li><li><a href="global.html#mostrarModificarAulas">mostrarModificarAulas</a></li><li><a href="global.html#mostrarModificarPersonal">mostrarModificarPersonal</a></li><li><a href="global.html#mostrarModificarProf">mostrarModificarProf</a></li><li><a href="global.html#mostrarPregunta">mostrarPregunta</a></li><li><a href="global.html#prellenarModal">prellenarModal</a></li><li><a href="global.html#saveCurso">saveCurso</a></li><li><a href="global.html#saveModulo">saveModulo</a></li><li><a href="global.html#saveUnidadesFormativas">saveUnidadesFormativas</a></li><li><a href="global.html#seleccionarRegistro">seleccionarRegistro</a></li><li><a href="global.html#toggleModulosTable">toggleModulosTable</a></li><li><a href="global.html#toggleUnidadesFormativas">toggleUnidadesFormativas</a></li><li><a href="global.html#unidadesFormativasContainer">unidadesFormativasContainer</a></li><li><a href="global.html#unidadesFormativasTable">unidadesFormativasTable</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 28 2025 11:39:35 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
