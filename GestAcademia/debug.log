@@ -5022,3 +5022,106 @@ DEBUG (login.php) - Inicio - session_id(): bfa127b93636022cf667d804ab8d449c
 DEBUG (login.php) - Usuario en sesión: 00000000A
 DEBUG (login.php) - Rol en sesión: Administrador
 DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): f375dd037e7dc7317ac23530acaf21ee
+Conexión exitosa
+Método: GET - URI: / - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): f375dd037e7dc7317ac23530acaf21ee
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): f375dd037e7dc7317ac23530acaf21ee
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): f375dd037e7dc7317ac23530acaf21ee
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): f375dd037e7dc7317ac23530acaf21ee
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 00000000A
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+DEBUG (login.php) - el password guardado es: $2y$12$HeSoX/b5stu/Kz1HKXk88.64l7okX6qOdUd6lJNenv9yJWr7xEOFO
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+Conexión exitosa
+DEBUG (init.php) - session_id(): 158920a5fdd8489c436d3c105816f1e5
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 158920a5fdd8489c436d3c105816f1e5
+DEBUG (login.php) - Usuario en sesión: 00000000A
+DEBUG (login.php) - Rol en sesión: Administrador
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): 158920a5fdd8489c436d3c105816f1e5
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createAlumno - IP: ::1
+Valor de route : createAlumno
+Conexión exitosa
+Ejecutando AlumnosController::create()
+DEBUG (init.php) - session_id(): 158920a5fdd8489c436d3c105816f1e5
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createAlumno - IP: ::1
+Valor de route : createAlumno
+Conexión exitosa
+Ejecutando AlumnosController::create()
+DEBUG (init.php) - session_id(): 158920a5fdd8489c436d3c105816f1e5
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createAlumno - IP: ::1
+Valor de route : createAlumno
+Conexión exitosa
+Ejecutando AlumnosController::create()
+DEBUG (init.php) - session_id(): 158920a5fdd8489c436d3c105816f1e5
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createAlumno - IP: ::1
+Valor de route : createAlumno
+Conexión exitosa
+Ejecutando AlumnosController::create()
+DEBUG (init.php) - session_id(): 158920a5fdd8489c436d3c105816f1e5
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createAlumno - IP: ::1
+Valor de route : createAlumno
+Conexión exitosa
+Ejecutando AlumnosController::create()
+DEBUG (init.php) - session_id(): 158920a5fdd8489c436d3c105816f1e5
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createAlumno - IP: ::1
+Valor de route : createAlumno
+Conexión exitosa
+Ejecutando AlumnosController::create()
+DEBUG (init.php) - session_id(): 158920a5fdd8489c436d3c105816f1e5
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createAlumno - IP: ::1
+Valor de route : createAlumno
+Conexión exitosa
+Ejecutando AlumnosController::create()
+DEBUG (init.php) - session_id(): 158920a5fdd8489c436d3c105816f1e5
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createAlumno - IP: ::1
+Valor de route : createAlumno
+Conexión exitosa
+Ejecutando AlumnosController::create()
+DEBUG (init.php) - session_id(): 158920a5fdd8489c436d3c105816f1e5
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createAlumno - IP: ::1
+Valor de route : createAlumno
+Conexión exitosa
+Ejecutando AlumnosController::create()
+DEBUG (init.php) - session_id(): 158920a5fdd8489c436d3c105816f1e5
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createAlumno - IP: ::1
+Valor de route : createAlumno
+Conexión exitosa
+Ejecutando AlumnosController::create()
+DEBUG (init.php) - session_id(): 158920a5fdd8489c436d3c105816f1e5
+Conexión exitosa
+Método: GET - URI: / - IP: ::1
+Valor de route : home
+Conexión exitosa
+DEBUG (init.php) - session_id(): 158920a5fdd8489c436d3c105816f1e5
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 158920a5fdd8489c436d3c105816f1e5
+DEBUG (login.php) - Usuario en sesión: 00000000A
+DEBUG (login.php) - Rol en sesión: Administrador
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): 158920a5fdd8489c436d3c105816f1e5
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createNotificacion - IP: ::1
+Valor de route : createNotificacion
+Conexión exitosa
+Ejecutando NotificacionController::create()

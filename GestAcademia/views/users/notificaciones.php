@@ -20,28 +20,7 @@
         <h2>Panel de Notificaciones</h2>
         <ul>
         <li><a href="./views/users/backoffice.php"><i class="fas fa-home"></i> Volver al panel central</a></li>
-            <li>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#modalBuscar" onclick="prellenarModal()">
-                    <i class="fas fa-search"></i> Buscar Aula
-                </a>
-            </li>
-            <li>
-                <!-- Enlace para insertar profesor -->
-                <a href="#" onclick="mostrarInsertarAulas()">
-                    <i class="fas fa-plus"></i> Insertar aula
-                </a>
-            </li>
-            <li>
-                <!-- Enlace para modificar profesor -->
-                <a href="#" onclick="mostrarModificarAulas()">
-                    <i class="fas fa-edit"></i> Modificar aula
-                </a>
-            </li>
-            <li>
-                <a href="/listados/listadosAulas.php">
-                    <i class="fas fa-list"></i> Listado de todas las aulas
-                </a>
-            </li>
+            
             <li><a href="#"><i class="fas fa-bell"></i> Ver Notificaciones</a></li>
             <li><a href="/logout.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
         </ul>

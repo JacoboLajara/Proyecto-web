@@ -41,7 +41,7 @@
           <i class="fas fa-edit"></i> Modificar Alumno
         </a>
       </li>
-     <!-- Enlace para listar alumnos -->
+      <!-- Enlace para listar alumnos -->
       <li>
         <a href="/listados/listadosAlumnos.php">
           <i class="fas fa-list"></i> Listar Todos los Alumnos
@@ -145,7 +145,7 @@
       <form id="formAlumno" action="../../mainpage.php?route=storeAlumno" method="post">
         <fieldset>
           <legend class="mb-3">
-            <span class="titulo"> - Datos personales del alumno - </span>
+            <span class="titulo"> - Datos personales del alumno- </span>
           </legend>
 
           <!-- Campos del formulario -->
@@ -165,7 +165,7 @@
               <input id="apellido2" type="text" name="apellido2" class="form-control" maxlength="75" required
                 onchange="comprueba(this)" onblur="comprueba(this)">
             </div>
-            <div class="col-md-3">
+            <div class="col-md-1">
               <label for="id_alumno" class="form-label">DNI/NIE</label>
               <input id="id_alumno" type="text" name="id_alumno" class="form-control" size="9" maxlength="9"
                 pattern="[0-9]{8}[A-Z]{1}" onchange="comprueba(this)" onblur="comprueba(this)">
@@ -173,9 +173,11 @@
           </div>
 
           <div class="mb-3">
-            <label for="direccion" class="form-label">Dirección (opcional)</label>
-            <input id="direccion" type="text" name="direccion" class="form-control" maxlength="200"
-              onchange="comprueba(this)" onblur="comprueba(this)">
+            <div class="col-md-9">
+              <label for="direccion" class="form-label">Dirección (opcional)</label>
+              <input id="direccion" type="text" name="direccion" class="form-control" maxlength="200"
+                onchange="comprueba(this)" onblur="comprueba(this)">
+            </div>
           </div>
 
           <div class="row mb-3">
@@ -189,7 +191,8 @@
               <input id="provincia" type="text" name="provincia" class="form-control" maxlength="75" required
                 onchange="comprueba(this)" onblur="comprueba(this)">
             </div>
-            <div class="col-md-4">
+
+            <div class="col-md-2">
               <label for="cpostal" class="form-label">Código Postal</label>
               <input id="cpostal" type="text" name="cpostal" class="form-control" maxlength="5" required
                 onchange="comprueba(this)" onblur="comprueba(this)">
@@ -197,17 +200,22 @@
           </div>
 
           <div class="row mb-3">
-            <div class="col-md-4">
+            <div class="col-md-2">
               <label for="fechanac" class="form-label">Fecha de Nacimiento</label>
               <input id="fechanac" type="date" name="fechanac" class="form-control" onchange="comprueba(this)"
                 onblur="comprueba(this)">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-2">
               <label for="Phone" class="form-label">Teléfono</label>
               <input type="tel" id="Phone" name="Phone" class="form-control" title="formato 999999999"
                 pattern="[0-9]{9}" required onblur="comprueba(this)">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-2">
               <label for="mail" class="form-label">E-mail</label>
               <input id="mail" type="email" name="mail" class="form-control" title="formato mail@server.com"
                 onchange="return ValidarMail(this)" required>
