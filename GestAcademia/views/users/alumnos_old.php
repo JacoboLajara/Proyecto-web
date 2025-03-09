@@ -69,6 +69,7 @@
                 </div>
                 <div class="modal-body" id="mensajeModalBody">
                     <!-- El contenido del mensaje se rellenará dinámicamente -->
+                     <!-- El contenido del mensaje se rellenará dinámicamente mensaje de prueba -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
