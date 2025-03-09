@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../../init.php';  // Ruta ajustada para incluir init.php
 require_once __DIR__ . '/../../config/conexion.php';
+require_once __DIR__ . '/../../models/NotificacionModel.php';
 
 /*file_put_contents('debug.log', "DEBUG (backoffice.php) - session_id(): " . session_id() . "\n", FILE_APPEND);
 file_put_contents('debug.log', "DEBUG (backoffice.php) - Usuario en sesión: " . ($_SESSION['usuario'] ?? 'No definido') . "\n", FILE_APPEND);
@@ -21,7 +22,15 @@ if (!isset($_SESSION['auth_token'])) {
     header('Location: ../../login.php');
     exit();
 }
-
+if ($rol === 'Profesor') {
+    $idProfesor = $_SESSION['usuario'] ?? null;
+    $notificacionModel = new NotificacionModel();
+    $notificaciones = $notificacionModel->getNotificacionesPorProfesor($idProfesor);
+} elseif ($rol === 'Personal_No_Docente'){
+    $idPersonal = $_SESSION['usuario'] ?? null;
+    $notificacionModel = new NotificacionModel();
+    $notificaciones = $notificacionModel->getNotificacionesPorPersonal($idPersonal);
+}
 
 /*echo "<pre>";
 echo "Bienvenido, " . $_SESSION['usuario'] . "<br>";
@@ -61,9 +70,11 @@ echo "</pre>";*/
                     <li><a href="/mainpage.php?route=createMatricula"><i class="fas fa-clipboard-list"></i> Matrículas</a></li>
                     <li><a href="/mainpage.php?route=bajaAlumnos"><i class="fas fa-user-minus"></i> Baja Matrículas</a></li>
                     <li><a href="/mainpage.php?route=createNotas"><i class="fas fa-clipboard"></i> Gestión de Notas</a></li>
-                    <li><a href="/mainpage.php?route=createHorario"><i class="fas fa-calendar-alt"></i> Asignar Horarios</a></li>
+                    <li><a href="/mainpage.php?route=createHorario"><i class="fas fa-calendar-alt"></i> Asignar Horarios</a>
+                    </li>
                     <li><a href="/mainpage.php?route=recibos"><i class="fas fa-clipboard"></i> Gestión de Recibos</a></li>
-                    <li><a href="/mainpage.php?route=createNotificacion"><i class="fas fa-bell"></i> Gestión de Notificaciones</a></li>
+                    <li><a href="/mainpage.php?route=createNotificacion"><i class="fas fa-bell"></i> Gestión de
+                            Notificaciones</a></li>
                     <li><a href="ayuda.php"><i class="fas fa-question-circle"></i> Ayuda</a></li>
 
                 <?php elseif ($rol === 'Personal_No_Docente'): ?>
@@ -75,20 +86,25 @@ echo "</pre>";*/
                     <li><a href="/mainpage.php?route=createAula"><i class="fas fa-school"></i> Gestión Aulas</a></li>
                     <li><a href="/mainpage.php?route=createMatricula"><i class="fas fa-clipboard-list"></i> Matrículas</a></li>
                     <li><a href="/mainpage.php?route=createNotas"><i class="fas fa-clipboard"></i> Gestión de Notas</a></li>
-                    <li><a href="/mainpage.php?route=createHorario"><i class="fas fa-calendar-alt"></i> Asignar Horarios</a></li>
+                    <li><a href="/mainpage.php?route=createHorario"><i class="fas fa-calendar-alt"></i> Asignar Horarios</a>
+                    </li>
                     <li><a href="/mainpage.php?route=recibos"><i class="fas fa-clipboard"></i> Gestión de Recibos</a></li>
-                    <li><a href="/mainpage.php?route=createNotificacion"><i class="fas fa-bell"></i> Gestión de Notificaciones</a></li>
+                    <li><a href="/mainpage.php?route=createNotificacion"><i class="fas fa-bell"></i> Gestión de
+                            Notificaciones</a></li>
                     <li><a href="ayuda.php"><i class="fas fa-question-circle"></i> Ayuda</a></li>
 
 
                 <?php elseif ($rol === 'Profesor'): ?>
+
                     <!-- 📌 Listado de todos los cursos -->
                     <li><a href="/../../listados/listadoCursos.php" target="_blank"> 📄 Listado de Cursos</a></li>
                     <!-- 📌 Listado de cursos con módulos y unidades formativas -->
-                    <li><a href="/../../listados/listadoCursoDetalle.php" target="_blank">📄 Listado de Cursos con Módulos y Unidades</a></li>
+                    <li><a href="/../../listados/listadoCursoDetalle.php" target="_blank">📄 Listado de Cursos con Módulos y
+                            Unidades</a></li>
                     <li><a href="/mainpage.php?route=createNotas"><i class="fas fa-clipboard"></i> Gestión de Notas</a></li>
                     <li> <a href="/listados/ListadoHorarios.php"><i class="fas fa-list"></i> Listar Todos los Horarios</a></li>
-                    <li><a href="/mainpage.php?route=createNotificacion"><i class="fas fa-bell"></i> Gestión de Notificaciones</a></li>
+                    <li><a href="/mainpage.php?route=createNotificacion"><i class="fas fa-bell"></i> Gestión de
+                            Notificaciones</a></li>
                     <li><a href="ayuda.php"><i class="fas fa-question-circle"></i> Ayuda</a></li>
 
                 <?php endif; ?>
@@ -108,6 +124,20 @@ echo "</pre>";*/
         <div class="header">
             <h1>Bienvenido al BackOffice</h1>
             <p>Usuario: <?php echo $_SESSION['usuario']; ?> | Rol: <?php echo $_SESSION['rol']; ?></p>
+        </div>
+        <!-- Sección de Notificaciones -->
+        <div class="section">
+            <h2>Tus Notificaciones</h2>
+            <?php if (!empty($notificaciones)): ?>
+                <ul>
+                    <?php foreach ($notificaciones as $notificacion): ?>
+                        <li><?php echo htmlspecialchars($notificacion['Mensaje']); ?> - Fecha:
+                            <?php echo htmlspecialchars($notificacion['Fecha']); ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php else: ?>
+                <p>No tienes notificaciones.</p>
+            <?php endif; ?>
         </div>
         <div class="section">
             <h2>Resumen del Sistema</h2>

@@ -158,10 +158,10 @@ class NotificacionModel
                 $sql = "SELECT ID_Alumno AS ID_Usuario, Nombre FROM Alumno WHERE Fecha_Baja='2000-01-01'";
                 break;
             case 'Profesor':
-                $sql = "SELECT ID_Profesor AS ID_Usuario, Nombre FROM Profesor WHERE Fecha_Baja IS NULL";
+                $sql = "SELECT ID_Profesor AS ID_Usuario, Nombre FROM Profesor WHERE Fecha_Baja='2000-01-01'";
                 break;
             case 'Personal':
-                $sql = "SELECT ID_Personal AS ID_Usuario, Nombre FROM Personal_No_Docente WHERE Fecha_Baja IS NULL";
+                $sql = "SELECT ID_Personal AS ID_Usuario, Nombre FROM Personal_No_Docente WHERE Fecha_Baja ='2000-01-01'";
                 break;
             case 'Curso':
                 $sql = "SELECT DISTINCT ac.ID_Curso AS ID_Usuario 
@@ -261,6 +261,56 @@ class NotificacionModel
         }
 
         $stmt->bind_param("s", $idAlumno);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if (!$result) {
+            file_put_contents('debug.log', "Error al obtener las notificaciones: " . $this->conn->error . "\n", FILE_APPEND);
+            return [];
+        }
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getNotificacionesPorProfesor($idProfesor)
+    {
+        $sql = "SELECT n.Mensaje, n.Fecha_Envio AS Fecha
+                FROM Notificacion_Profesor n
+                WHERE n.ID_Profesor = ?
+                ORDER BY n.Fecha_Envio DESC";
+
+        $stmt = $this->conn->prepare($sql);
+        if ($stmt === false) {
+            file_put_contents('debug.log', "Error al preparar la consulta: " . $this->conn->error . "\n", FILE_APPEND);
+            return [];
+        }
+
+        $stmt->bind_param("s", $idProfesor);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if (!$result) {
+            file_put_contents('debug.log', "Error al obtener las notificaciones: " . $this->conn->error . "\n", FILE_APPEND);
+            return [];
+        }
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getNotificacionesPorPersonal($idPersonal)
+    {
+        $sql = "SELECT n.Mensaje, n.Fecha_Envio AS Fecha
+                FROM Notificacion_Personal n
+                WHERE n.ID_Personal = ?
+                ORDER BY n.Fecha_Envio DESC";
+
+        $stmt = $this->conn->prepare($sql);
+        if ($stmt === false) {
+            file_put_contents('debug.log', "Error al preparar la consulta: " . $this->conn->error . "\n", FILE_APPEND);
+            return [];
+        }
+
+        $stmt->bind_param("s", $idPersonal);
         $stmt->execute();
         $result = $stmt->get_result();
 
