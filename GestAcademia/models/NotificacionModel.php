@@ -272,6 +272,17 @@ class NotificacionModel
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+
+    /**
+     * Obtiene las notificaciones enviadas a un profesor.
+     *
+     * Ejecuta una consulta en la tabla Notificacion_Profesor para obtener los mensajes y
+     * la fecha de envío de las notificaciones dirigidas a un profesor, ordenados de forma descendente.
+     *
+     * @param string $idProfesor Identificador del profesor.
+     * @return array Array asociativo con las notificaciones o un array vacío en caso de error.
+     */
+
     public function getNotificacionesPorProfesor($idProfesor)
     {
         $sql = "SELECT n.Mensaje, n.Fecha_Envio AS Fecha
@@ -296,6 +307,17 @@ class NotificacionModel
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+
+    /**
+     * Obtiene las notificaciones enviadas a todos a un elemento de personal no docente.
+     *
+     * Ejecuta una consulta en la tabla Notificacion_Personal para obtener los mensajes y
+     * la fecha de envío de las notificaciones dirigidas a un personal, ordenados de forma descendente.
+     *
+     * @param string $idPersonal Identificador del personal.
+     * @return array Array asociativo con las notificaciones o un array vacío en caso de error.
+     */
 
     public function getNotificacionesPorPersonal($idPersonal)
     {
