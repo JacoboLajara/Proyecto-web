@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: notificaciones.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: notificaciones.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Muestra la pregunta "¿Todos o algunos?" al seleccionar una figura.
+ *
+ * Esta función muestra el elemento con id "preguntaTodos" configurándolo para que sea visible.
+ *
+ * @returns {void}
+ */
+function mostrarPregunta() {
+    const pregunta = document.getElementById('preguntaTodos');
+    if (pregunta) {
+        pregunta.style.display = 'block';
+    }
+}
+
+/**
+ * Envía la notificación a todos los usuarios.
+ *
+ * Valida que se haya seleccionado una figura (tipo) y se haya ingresado un mensaje.
+ * Luego, añade un campo oculto "todos" al formulario si aún no existe y envía el formulario.
+ *
+ * @returns {void}
+ */
+function enviarATodos() {
+    const tipo = document.getElementById('opciones').value;
+    const mensaje = document.getElementById('notificacion').value;
+
+    if (!tipo) {
+        alert("Selecciona una figura antes de continuar.");
+        return;
+    }
+
+    if (!mensaje) {
+        alert("Por favor, escribe el mensaje antes de enviarlo.");
+        return;
+    }
+
+    const formulario = document.querySelector('form');
+
+    // Evitar duplicados: si el campo oculto "todos" no existe, lo crea.
+    if (!formulario.querySelector('input[name="todos"]')) {
+        const inputOculto = document.createElement('input');
+        inputOculto.type = 'hidden';
+        inputOculto.name = 'todos';
+        inputOculto.value = '1';
+        formulario.appendChild(inputOculto);
+    }
+
+    formulario.submit();
+}
+
+/**
+ * Muestra el modal para seleccionar usuarios específicos.
+ *
+ * Valida que se haya seleccionado una figura (tipo) y luego realiza una llamada AJAX
+ * para obtener los usuarios activos del tipo seleccionado. Si se reciben usuarios, los muestra en el modal.
+ *
+ * @returns {void}
+ */
+function mostrarModalSeleccion() {
+    const tipo = document.getElementById('opciones').value;
+    if (!tipo) {
+        alert("Selecciona una figura antes de continuar.");
+        return;
+    }
+
+    // Realiza una llamada AJAX para obtener usuarios activos por tipo
+    fetch(`/router.php?route=getUsuariosPorTipo&amp;type=${tipo}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Usuarios recibidos:", data);
+            const listaUsuarios = document.getElementById('lista-usuarios');
+            listaUsuarios.innerHTML = '';
+
+            if (data.length === 0) {
+                alert("No se encontraron usuarios activos.");
+                return;
+            }
+
+            data.forEach(usuario => {
+                const option = document.createElement('option');
+                option.value = usuario.ID_Usuario;
+                option.textContent = `${usuario.ID_Usuario} - ${usuario.Nombre ?? ''}`;
+                listaUsuarios.appendChild(option);
+            });
+
+            const modal = new bootstrap.Modal(document.getElementById('modalSeleccionUsuarios'));
+            modal.show();
+        })
+        .catch(error => {
+            console.error('Error al cargar usuarios:', error);
+            alert(`Ocurrió un error al cargar los usuarios: ${error.message}`);
+        });
+}
+
+/**
+ * Confirma la selección de usuarios y los agrega al formulario.
+ *
+ * Obtiene los usuarios seleccionados del elemento select con id "lista-usuarios",
+ * elimina cualquier entrada oculta previa para evitar duplicados y añade nuevos campos ocultos
+ * al formulario. Finalmente, cierra el modal y envía el formulario.
+ *
+ * @returns {void}
+ */
+function confirmarSeleccion() {
+    const listaUsuarios = document.getElementById('lista-usuarios');
+    const usuariosSeleccionados = Array.from(listaUsuarios.selectedOptions).map(option => option.value);
+
+    if (usuariosSeleccionados.length === 0) {
+        alert("Por favor, selecciona al menos un usuario.");
+        return;
+    }
+
+    const formulario = document.querySelector('form');
+
+    // Elimina entradas ocultas existentes para evitar duplicados
+    formulario.querySelectorAll('input[name="usuarios[]"]').forEach(input => input.remove());
+
+    usuariosSeleccionados.forEach(idUsuario => {
+        const inputOculto = document.createElement('input');
+        inputOculto.type = 'hidden';
+        inputOculto.name = 'usuarios[]';
+        inputOculto.value = idUsuario;
+        formulario.appendChild(inputOculto);
+    });
+
+    // Cierra el modal y envía el formulario
+    const modal = bootstrap.Modal.getInstance(document.getElementById('modalSeleccionUsuarios'));
+    if (modal) {
+        modal.hide();
+    }
+
+    formulario.submit();
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Events</h3><ul><li><a href="global.html#event:DOMContentLoaded">DOMContentLoaded</a></li><li><a href="global.html#event:change">change</a></li><li><a href="global.html#event:click">click</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Validar">Validar</a></li><li><a href="global.html#ValidarMail">ValidarMail</a></li><li><a href="global.html#actualizarLinkListadoRecibos">actualizarLinkListadoRecibos</a></li><li><a href="global.html#addModuloRow">addModuloRow</a></li><li><a href="global.html#addUnidadRow">addUnidadRow</a></li><li><a href="global.html#agregarModulo">agregarModulo</a></li><li><a href="global.html#agregarUnidad">agregarUnidad</a></li><li><a href="global.html#buscarRegistros">buscarRegistros</a></li><li><a href="global.html#cargarCurso">cargarCurso</a></li><li><a href="global.html#cargarRecibos">cargarRecibos</a></li><li><a href="global.html#comprueba">comprueba</a></li><li><a href="global.html#confirmarSeleccion">confirmarSeleccion</a></li><li><a href="global.html#currentCursoId">currentCursoId</a></li><li><a href="global.html#currentModuloId">currentModuloId</a></li><li><a href="global.html#deleteRow">deleteRow</a></li><li><a href="global.html#disableFormFieldsAulas">disableFormFieldsAulas</a></li><li><a href="global.html#disableFormFieldsPersonal">disableFormFieldsPersonal</a></li><li><a href="global.html#disableFormFieldsProf">disableFormFieldsProf</a></li><li><a href="global.html#eliminarModulo">eliminarModulo</a></li><li><a href="global.html#eliminarUnidad">eliminarUnidad</a></li><li><a href="global.html#enableFormFieldsAulas">enableFormFieldsAulas</a></li><li><a href="global.html#enableFormFieldsPersonal">enableFormFieldsPersonal</a></li><li><a href="global.html#enableFormFieldsProf">enableFormFieldsProf</a></li><li><a href="global.html#enviarATodos">enviarATodos</a></li><li><a href="global.html#guardarCambios">guardarCambios</a></li><li><a href="global.html#habilitarEdicion">habilitarEdicion</a></li><li><a href="global.html#modulosContainer">modulosContainer</a></li><li><a href="global.html#modulosTable">modulosTable</a></li><li><a href="global.html#mostrarDetallesCurso">mostrarDetallesCurso</a></li><li><a href="global.html#mostrarInsertarAulas">mostrarInsertarAulas</a></li><li><a href="global.html#mostrarInsertarPersonal">mostrarInsertarPersonal</a></li><li><a href="global.html#mostrarInsertarProf">mostrarInsertarProf</a></li><li><a href="global.html#mostrarModalSeleccion">mostrarModalSeleccion</a></li><li><a href="global.html#mostrarModificarAulas">mostrarModificarAulas</a></li><li><a href="global.html#mostrarModificarPersonal">mostrarModificarPersonal</a></li><li><a href="global.html#mostrarModificarProf">mostrarModificarProf</a></li><li><a href="global.html#mostrarPregunta">mostrarPregunta</a></li><li><a href="global.html#prellenarModal">prellenarModal</a></li><li><a href="global.html#saveCurso">saveCurso</a></li><li><a href="global.html#saveModulo">saveModulo</a></li><li><a href="global.html#saveUnidadesFormativas">saveUnidadesFormativas</a></li><li><a href="global.html#seleccionarRegistro">seleccionarRegistro</a></li><li><a href="global.html#toggleModulosTable">toggleModulosTable</a></li><li><a href="global.html#toggleUnidadesFormativas">toggleUnidadesFormativas</a></li><li><a href="global.html#unidadesFormativasContainer">unidadesFormativasContainer</a></li><li><a href="global.html#unidadesFormativasTable">unidadesFormativasTable</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 28 2025 11:39:35 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
