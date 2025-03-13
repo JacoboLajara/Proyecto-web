@@ -118,7 +118,7 @@
             <!-- Formulario de búsqueda -->
             <form id="formBuscar">
               <div class="mb-3">
-                <label for="criterioBusqueda" class="form-label">Criterio de búsqueda:</label>
+                <label for="criterioBusqueda" class="form-label">Criterio de búsqueda: se podrá buscar uno de estos criterios DNI, Apellido1, Apellido2, Nombre</label>
                 <input type="text" id="criterioBusqueda" class="form-control" placeholder="Ingrese criterio..." />
               </div>
               <button type="button" class="btn btn-primary" onclick="buscarRegistros()">Buscar</button>
@@ -130,7 +130,9 @@
                   <th>ID</th>
                   <th>Nombre</th>
                   <th>Apellido</th>
+                  <th>Apellido2</th>
                   <th>Acción</th>
+
                 </tr>
               </thead>
               <tbody id="tablaResultados"></tbody>

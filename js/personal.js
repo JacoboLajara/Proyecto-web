@@ -132,6 +132,7 @@ function buscarRegistros() {
                     <td>${registro.ID_Personal}</td>
                     <td>${registro.Nombre}</td>
                     <td>${registro.Apellido1}</td>
+                    <td>${registro.Apellido2}</td>
                     <td>
                         <button type="button" class="btn btn-success" onclick="seleccionarRegistro('${registro.ID_Personal}')">
                             Seleccionar
@@ -201,7 +202,7 @@ function seleccionarRegistro(id) {
 
             // Mostrar botón "Modificar Alumno"
             document.getElementById('modificarPersonalLi').style.display = "block";
-            console.log("✅ Alumno seleccionado. Botón Modificar ahora visible.");
+            console.log("✅ personal no docente seleccionado. Botón Modificar ahora visible.");
         })
         .catch(error => console.error('Error:', error));
 }
@@ -215,7 +216,7 @@ function seleccionarRegistro(id) {
  * @returns {void}
  */
 function disableFormFieldsPersonal() {
-    const fields = document.querySelectorAll('#formPersonal fieldset input, #formPersonal fieldset select, #formPersonal fieldset textarea');
+    const fields = document.querySelectorAll('#formPersonal  input, #formPersonal select, #formPersonal textarea');
     fields.forEach(function (field) {
         field.disabled = true;
     });
@@ -281,4 +282,5 @@ function mostrarModificarPersonal() {
  */
 document.addEventListener('DOMContentLoaded', function () {
     disableFormFieldsPersonal();
+    document.getElementById("criterioBusqueda").disabled = false; // 🔹 Forzar activación
 });

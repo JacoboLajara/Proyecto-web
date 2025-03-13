@@ -62,35 +62,29 @@ echo "</pre>";*/
                 <?php if ($rol === 'Administrador'): ?>
                     <li><a href="/mainpage.php?route=usuarios"><i class="fas fa-user-plus"></i> Gestión Usuario</a></li>
                     <li><a href="/mainpage.php?route=createAlumno"><i class="fas fa-user-graduate"></i> Gestión Alumno</a></li>
-                    <li><a href="/mainpage.php?route=createProfesor"><i class="fas fa-chalkboard-teacher"></i> Gestión
-                            Profesores</a></li>
+                    <li><a href="/mainpage.php?route=createProfesor"><i class="fas fa-chalkboard-teacher"></i> Gestión Profesores</a></li>
                     <li><a href="/mainpage.php?route=createPersonal"><i class="fas fa-users"></i> Gestión Personal</a></li>
                     <li><a href="/mainpage.php?route=createCurso"><i class="fas fa-book"></i> Gestión Curso</a></li>
                     <li><a href="/mainpage.php?route=createAula"><i class="fas fa-school"></i> Gestión Aulas</a></li>
                     <li><a href="/mainpage.php?route=createMatricula"><i class="fas fa-clipboard-list"></i> Matrículas</a></li>
-                    <li><a href="/mainpage.php?route=bajaAlumnos"><i class="fas fa-user-minus"></i> Baja Matrículas</a></li>
+                    <li><a href="/mainpage.php?route=createMatriculaprofesor"><i class="fas fa-clipboard-list"></i> Asignación Profesores</a></li>
                     <li><a href="/mainpage.php?route=createNotas"><i class="fas fa-clipboard"></i> Gestión de Notas</a></li>
-                    <li><a href="/mainpage.php?route=createHorario"><i class="fas fa-calendar-alt"></i> Asignar Horarios</a>
-                    </li>
+                    <li><a href="/mainpage.php?route=createHorario"><i class="fas fa-calendar-alt"></i> Asignar Horarios</a></li>
                     <li><a href="/mainpage.php?route=recibos"><i class="fas fa-clipboard"></i> Gestión de Recibos</a></li>
-                    <li><a href="/mainpage.php?route=createNotificacion"><i class="fas fa-bell"></i> Gestión de
-                            Notificaciones</a></li>
+                    <li><a href="/mainpage.php?route=createNotificacion"><i class="fas fa-bell"></i> Gestión de Notificaciones</a></li>
                     <li><a href="ayuda.php"><i class="fas fa-question-circle"></i> Ayuda</a></li>
 
                 <?php elseif ($rol === 'Personal_No_Docente'): ?>
                     <li><a href="/mainpage.php?route=createAlumno"><i class="fas fa-user-graduate"></i> Gestión Alumno</a></li>
-                    <li><a href="/mainpage.php?route=createProfesor"><i class="fas fa-chalkboard-teacher"></i> Gestión
-                            Profesores</a></li>
+                    <li><a href="/mainpage.php?route=createProfesor"><i class="fas fa-chalkboard-teacher"></i> Gestión Profesores</a></li>
                     <li><a href="/mainpage.php?route=createPersonal"><i class="fas fa-users"></i> Gestión Personal</a></li>
                     <li><a href="/mainpage.php?route=createCurso"><i class="fas fa-book"></i> Gestión Curso</a></li>
                     <li><a href="/mainpage.php?route=createAula"><i class="fas fa-school"></i> Gestión Aulas</a></li>
                     <li><a href="/mainpage.php?route=createMatricula"><i class="fas fa-clipboard-list"></i> Matrículas</a></li>
                     <li><a href="/mainpage.php?route=createNotas"><i class="fas fa-clipboard"></i> Gestión de Notas</a></li>
-                    <li><a href="/mainpage.php?route=createHorario"><i class="fas fa-calendar-alt"></i> Asignar Horarios</a>
-                    </li>
+                    <li><a href="/mainpage.php?route=createHorario"><i class="fas fa-calendar-alt"></i> Asignar Horarios</a></li>
                     <li><a href="/mainpage.php?route=recibos"><i class="fas fa-clipboard"></i> Gestión de Recibos</a></li>
-                    <li><a href="/mainpage.php?route=createNotificacion"><i class="fas fa-bell"></i> Gestión de
-                            Notificaciones</a></li>
+                    <li><a href="/mainpage.php?route=createNotificacion"><i class="fas fa-bell"></i> Gestión de Notificaciones</a></li>
                     <li><a href="ayuda.php"><i class="fas fa-question-circle"></i> Ayuda</a></li>
 
 
@@ -99,8 +93,8 @@ echo "</pre>";*/
                     <!-- 📌 Listado de todos los cursos -->
                     <li><a href="/../../listados/listadoCursos.php" target="_blank"> 📄 Listado de Cursos</a></li>
                     <!-- 📌 Listado de cursos con módulos y unidades formativas -->
-                    <li><a href="/../../listados/listadoCursoDetalle.php" target="_blank">📄 Listado de Cursos con Módulos y
-                            Unidades</a></li>
+                    <li><a href="/listados/listadoCursoDetallePorProfesor.php" target="_blank">📄 Listado de Cursos con Módulos y Unidades</a></li>
+
                     <li><a href="/mainpage.php?route=createNotas"><i class="fas fa-clipboard"></i> Gestión de Notas</a></li>
                     <li> <a href="/listados/ListadoHorarios.php"><i class="fas fa-list"></i> Listar Todos los Horarios</a></li>
                     <li><a href="/mainpage.php?route=createNotificacion"><i class="fas fa-bell"></i> Gestión de

@@ -1,14 +1,15 @@
 <?php
+require_once __DIR__ . '/../init.php';
+
+
+
 // Incluir TCPDF y el modelo de cursos
 require_once __DIR__ . '/../libs/tcpdf/tcpdf.php';
 require_once __DIR__ . '/../models/CursosModel.php';
 
+
 // Crear una instancia del modelo
 $model = new CursosModel();
-
-
-// Verificar si se han obtenido datos
-
 
 /// Crear un nuevo documento PDF
 $pdf = new TCPDF();
@@ -28,10 +29,17 @@ $pdf->Cell(0, 10, 'Listado de Cursos Activos', 0, 1, 'C'); // **Título centrado
 $pdf->Ln(5); // Espaciado antes de la tabla
 
 // **Obtener cursos con módulos y unidades**
-$cursos = $model->getCursosConModulosYUnidades();
+$cursos = $model->getCursosConModulosYUnidadesPorProfesor();
+// 🔴 Depuración: Muestra los datos y detiene la ejecución
+// echo "<pre>";
+// var_dump($cursos);
+// echo "</pre>";
+// exit;
+
 if (!$cursos || !is_array($cursos)) {
     die("No se encontraron cursos.");
 }
+
 
 $pdf->SetFont('helvetica', 'B', 16);
 $pdf->Cell(0, 10, "Listado de cursos activos", 1, 1, 'C', true);
@@ -47,15 +55,13 @@ foreach ($cursos as $curso) {
     $pdf->SetFillColor(230, 230, 230); // Fondo gris claro
     $pdf->SetDrawColor(0, 0, 0); // Borde negro
     $pdf->SetLineWidth(0.5);
-   
+
     $pdf->SetFont('helvetica', 'B', 14);
     $pdf->Cell(0, 10, "Curso: " . $curso['Nombre'] . " (ID: " . $curso['ID_Curso'] . ")", 1, 1, 'C', true);
-     
     // ✅ Mostrar Aula del curso
     $pdf->SetFont('helvetica', '', 12);
     $aula = isset($curso['ID_Aula']) ? "Aula: " . $curso['ID_Aula'] : "Aula no asignada";
     $pdf->Cell(0, 8, $aula, 1, 1, 'C', true);
-    
     $pdf->SetFont('helvetica', '', 12);
     $pdf->Cell(0, 8, "Duración: " . $curso['Duracion_Horas'] . " horas", 1, 1, 'C', true);
     $pdf->Ln(4);
@@ -76,7 +82,7 @@ foreach ($cursos as $curso) {
             $pdf->SetFont('helvetica', 'B', 12);
             $pdf->Cell(140, 8, "Módulo: " . $modulo['Nombre'] . " (ID: " . $modulo['ID_Modulo'] . ")", 1, 0, 'L', true);
             $pdf->Cell(50, 8, "Duración: " . $modulo['Duracion_Horas'] . " horas", 1, 1, 'C', true);
-            
+
             // Mostrar unidades formativas
             if (!empty($modulo['unidades'])) {
                 $unidadColor = false;
@@ -91,7 +97,7 @@ foreach ($cursos as $curso) {
                     $unidadColor = !$unidadColor;
 
                     $pdf->SetFont('helvetica', '', 11);
-                    $pdf->Cell(140, 8, "   Unidad: " . mb_convert_encoding($unidad['Nombre'],'ISO-8859-1', 'UTF-8') . " (ID: " . $unidad['ID_Unidad_Formativa'] . ")", 1, 0, 'L', true);
+                    $pdf->Cell(140, 8, "   Unidad: " . mb_convert_encoding($unidad['Nombre'], 'ISO-8859-1', 'UTF-8') . " (ID: " . $unidad['ID_Unidad_Formativa'] . ")", 1, 0, 'L', true);
                     $pdf->Cell(50, 8, "Duración: " . $unidad['Duracion_Unidad'] . " horas", 1, 1, 'C', true);
                 }
             }

@@ -6,6 +6,7 @@ require_once __DIR__ . '/controllers/PersonalController.php';
 require_once __DIR__ . '/controllers/CursosController.php';
 require_once __DIR__ . '/controllers/AulasController.php';
 require_once __DIR__ . '/controllers/MatriculasController.php';
+require_once __DIR__ . '/controllers/MatricularProfesoresController.php';
 require_once __DIR__ . '/controllers/NotasController.php';
 require_once __DIR__ . '/controllers/HorariosController.php';
 require_once __DIR__ . '/controllers/RecibosController.php';
@@ -31,26 +32,26 @@ switch ($route) {
         require_once __DIR__ . '/views/users/backoffice.php';
         exit;
 
-        case 'usuarios':
-            $controller = new UserController();
-            $controller->index();
-            exit;
-        
-        case 'searchUser':
-            $controller = new UserController();
-            $controller->searchUser();
-            exit;
-        
-        case 'updatePassword':
-            $controller = new UserController();
-            $controller->updatePassword();
-            exit;
-        
-        case 'deletePassword':
-            $controller = new UserController();
-            $controller->deletePassword();
-            exit;
-        
+    case 'usuarios':
+        $controller = new UserController();
+        $controller->index();
+        exit;
+
+    case 'searchUser':
+        $controller = new UserController();
+        $controller->searchUser();
+        exit;
+
+    case 'updatePassword':
+        $controller = new UserController();
+        $controller->updatePassword();
+        exit;
+
+    case 'deletePassword':
+        $controller = new UserController();
+        $controller->deletePassword();
+        exit;
+
 
     case 'createAlumno':
         $controller = new AlumnosController();
@@ -220,6 +221,17 @@ switch ($route) {
         $controller->create();
         exit;
 
+    case 'createMatriculaprofesor':
+        $controller = new MatricularProfesoresController();
+        $controller->create();
+        exit;
+
+        case 'storeAsignacion':
+            header('Content-Type: application/json; charset=utf-8');
+            $controller = new MatricularProfesoresController();
+            $controller->store();
+            exit;
+
     case 'getAlumnosMatriculados':
         if (ob_get_length()) {
             ob_clean();
@@ -310,6 +322,62 @@ switch ($route) {
         echo json_encode($resultado);
         exit;
 
+    // 📌 Rutas de gestión de ediciones de cursos
+    case 'listarEdiciones':
+        if (ob_get_length()) {
+            ob_clean();
+        }
+        header('Content-Type: application/json; charset=utf-8');
+        require_once __DIR__ . '/controllers/EdicionCursosController.php';
+        $controller = new EdicionCursosController();
+        $controller->listarEdiciones();
+        exit;
+
+    case 'guardarEdicion':
+        if (ob_get_length()) {
+            ob_clean();
+        }
+        header('Content-Type: application/json; charset=utf-8');
+        require_once __DIR__ . '/controllers/EdicionCursosController.php';
+        $controller = new EdicionCursosController();
+        $controller->guardarEdicion();
+        exit;
+
+    case 'actualizarEdicion':
+        if (ob_get_length()) {
+            ob_clean();
+        }
+        header('Content-Type: application/json; charset=utf-8');
+        require_once __DIR__ . '/controllers/EdicionCursosController.php';
+        $controller = new EdicionCursosController();
+        $controller->actualizarEdicion();
+        exit;
+
+    case 'consultaCursos':
+        if (ob_get_length()) {
+            ob_clean();
+        }
+        header('Content-Type: application/json; charset=utf-8');
+
+        require_once __DIR__ . '/controllers/EdicionCursosController.php';
+        $controller = new EdicionCursosController();
+        $controller->consultaCursos();
+        exit;
+
+
+    case 'eliminarEdicion':
+        if (ob_get_length()) {
+            ob_clean();
+        }
+        header('Content-Type: application/json; charset=utf-8');
+        require_once __DIR__ . '/controllers/EdicionCursosController.php';
+        $controller = new EdicionCursosController();
+        $controller->eliminarEdicion();
+        exit;
+
+    case 'gestionarEdicionCursos':
+        require_once __DIR__ . '/views/users/EdicionCursos.php';
+        exit;
 
 
     default:

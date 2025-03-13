@@ -1,3 +1,0 @@
-En la base de datos hay que tener activado el programador de eventos en MySQL (por ejemplo, con SET GLOBAL event_scheduler = ON;)
-en php.ini hay que activar extension curl para que funcionen .pdf
-habilitar fileinfo en php.ini

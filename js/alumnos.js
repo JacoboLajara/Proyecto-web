@@ -141,6 +141,7 @@ function buscarRegistros() {
                     <td>${registro.ID_Alumno}</td>
                     <td>${registro.Nombre}</td>
                     <td>${registro.Apellido1}</td>
+                    <td>${registro.Apellido2}</td>
                     <td>
                         <button type="button" class="btn btn-success" onclick="seleccionarRegistro('${registro.ID_Alumno}')">
                             Seleccionar

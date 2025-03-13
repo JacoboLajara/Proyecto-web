@@ -197,7 +197,7 @@ class CursosModel
 
         try {
             // Insertar curso
-            $this->insertCurso($curso['nombre'], $curso['codigo'], $curso['duracion'], $curso['tipo_curso'],$curso['tipo_cuota'], $curso['precio']);
+            $this->insertCurso($curso['nombre'], $curso['codigo'], $curso['duracion'], $curso['tipo_curso'], $curso['tipo_cuota'], $curso['precio']);
             $id_curso = $this->getLastInsertedId();
 
             // Insertar módulos
@@ -417,14 +417,17 @@ class CursosModel
         $conn = $this->getConnection();
         $cursosData = [];
 
-        // Obtener todos los cursos
-        $sqlCursos = "SELECT ID_Curso, Nombre, Duracion_Horas, Tipo, Tipo_cuota, Precio_curso FROM Curso";
+        // ✅ Consulta para obtener todos los cursos con su aula asignada
+        $sqlCursos = "SELECT c.ID_Curso, c.Nombre, c.Duracion_Horas, c.Tipo, c.Tipo_cuota, c.Precio_Curso, ah.ID_Aula 
+                      FROM Curso c
+                      LEFT JOIN Asignacion_Horario ah ON c.ID_Curso = ah.ID_Curso";
+
         $resultCursos = $conn->query($sqlCursos);
 
         while ($curso = $resultCursos->fetch_assoc()) {
             $curso['modulos'] = [];
 
-            // Obtener módulos del curso
+            // ✅ Consulta para obtener módulos del curso
             $sqlModulos = "SELECT m.ID_Modulo, m.Nombre, m.Duracion_Horas 
                            FROM Modulo m 
                            JOIN Curso_Modulo cm ON m.ID_Modulo = cm.ID_Modulo 
@@ -437,7 +440,7 @@ class CursosModel
             while ($modulo = $resultModulos->fetch_assoc()) {
                 $modulo['unidades'] = [];
 
-                // Obtener unidades formativas del módulo
+                // ✅ Consulta para obtener unidades formativas del módulo
                 $sqlUnidades = "SELECT ID_Unidad_Formativa, Nombre, Duracion_Unidad 
                                 FROM Unidad_Formativa 
                                 WHERE ID_Modulo = ?";
@@ -461,4 +464,77 @@ class CursosModel
 
         return $cursosData;
     }
+
+    public function getCursosConModulosYUnidadesPorProfesor()
+    {
+        $conn = $this->getConnection();
+
+        // Verificar si el usuario está autenticado
+        if (!isset($_SESSION['usuario']) || !isset($_SESSION['auth_token'])) {
+            file_put_contents('debug.log', "DEBUG - Usuario no autenticado, redirigiendo a login\n", FILE_APPEND);
+            header('Location: ../../login.php');
+            exit();
+        }
+
+        $idProfesor = $_SESSION['usuario']; // ✅ Definir correctamente $idProfesor
+        $cursosData = [];
+
+        // ✅ Consulta para obtener cursos con aulas
+        $sqlCursos = $conn->prepare("
+            SELECT c.ID_Curso, c.Nombre, c.Tipo, c.Tipo_cuota, c.Duracion_Horas, c.Precio_Curso, 
+                   pc.Fecha_Matricula, pc.Estado, ah.ID_Aula
+            FROM profesor_curso pc
+            JOIN Curso c ON pc.ID_Curso = c.ID_Curso
+            LEFT JOIN Asignacion_Horario ah ON c.ID_Curso = ah.ID_Curso
+            WHERE pc.ID_Profesor = ?
+        ");
+
+        $sqlCursos->bind_param("s", $idProfesor);
+        $sqlCursos->execute();
+        $resultCursos = $sqlCursos->get_result();
+
+        while ($curso = $resultCursos->fetch_assoc()) {
+            $curso['modulos'] = [];
+
+            // ✅ Consulta para obtener módulos del curso
+            $sqlModulos = $conn->prepare("
+                SELECT m.ID_Modulo, m.Nombre, m.Duracion_Horas 
+                FROM Modulo m 
+                JOIN Curso_Modulo cm ON m.ID_Modulo = cm.ID_Modulo 
+                WHERE cm.ID_Curso = ?
+            ");
+            $sqlModulos->bind_param("s", $curso['ID_Curso']);
+            $sqlModulos->execute();
+            $resultModulos = $sqlModulos->get_result();
+
+            while ($modulo = $resultModulos->fetch_assoc()) {
+                $modulo['unidades'] = [];
+
+                // ✅ Consulta para obtener unidades formativas
+                $sqlUnidades = $conn->prepare("
+                    SELECT ID_Unidad_Formativa, Nombre, Duracion_Unidad 
+                    FROM Unidad_Formativa 
+                    WHERE ID_Modulo = ?
+                ");
+                $sqlUnidades->bind_param("s", $modulo['ID_Modulo']);
+                $sqlUnidades->execute();
+                $resultUnidades = $sqlUnidades->get_result();
+
+                while ($unidad = $resultUnidades->fetch_assoc()) {
+                    $unidad['Nombre'] = mb_convert_encoding(trim($unidad['Nombre']), 'UTF-8', 'ISO-8859-1');
+                    $modulo['unidades'][] = $unidad;
+                }
+                $sqlUnidades->close();
+
+                $curso['modulos'][] = $modulo;
+            }
+            $sqlModulos->close();
+
+            $cursosData[] = $curso;
+        }
+
+        $sqlCursos->close();
+        return $cursosData;
+    }
+
 }

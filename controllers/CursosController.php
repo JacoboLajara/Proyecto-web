@@ -411,4 +411,5 @@ class CursosController
         }
         exit;
     }
+    
 }

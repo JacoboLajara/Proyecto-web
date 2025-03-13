@@ -10,6 +10,17 @@ $(document).ready(function () {
     let modoNotas = "store";
     console.log("✅ Cargando notas.js...");
 
+
+    $(document).on("input", ".nota-input", function () {
+        let valor = parseFloat(this.value);
+    
+        if (isNaN(valor) || valor < 0) {
+            this.value = 0;  // Si es menor que 0, lo pone en 0
+        } else if (valor > 10) {
+            this.value = 10; // Si es mayor que 10, lo pone en 10
+        }
+    });
+    
     /**
      * Evento click para el botón de editar notas.
      * Permite quitar la propiedad readonly de los inputs de nota y deshabilita el botón de editar.
@@ -41,8 +52,8 @@ $(document).ready(function () {
     });
 
     /**
-     * Evento "change" del select "id_curso" para cargar la lista de alumnos del curso seleccionado.
-     */
+ * Evento "change" del select "id_curso" para cargar la lista de alumnos del curso seleccionado.
+ */
     $('#id_curso').change(function () {
         let idCurso = $(this).val();
         if (!idCurso) {
@@ -59,18 +70,32 @@ $(document).ready(function () {
             if (response.length > 0) {
                 response.forEach(alumno => {
                     html += `<tr>
-                        <td><input type="radio" name="alumno" class="alumno-radio" value="${alumno.ID_Alumno}"></td>
-                        <td>${alumno.Nombre}</td>
-                        <td>${alumno.Apellido1}</td>
-                        <td>${alumno.Apellido2}</td>
-                        <td>${alumno.ID_Alumno}</td>
-                        <td>
-                            <button class="gestionarNotas btn btn-primary btn-sm" data-id="${alumno.ID_Alumno}">Gestionar Notas</button>
-                        </td>
-                    </tr>`;
+                    <td><input type="radio" name="alumno" class="alumno-radio" value="${alumno.ID_Alumno}"></td>
+                    <td>${alumno.Nombre}</td>
+                    <td>${alumno.Apellido1}</td>
+                    <td>${alumno.Apellido2}</td>
+                    <td>${alumno.ID_Alumno}</td>
+                    <td>
+                        <button class="gestionarNotas btn btn-primary btn-sm" data-id="${alumno.ID_Alumno}" disabled>
+                            Gestionar Notas
+                        </button>
+                    </td>
+                </tr>`;
                 });
                 $('#alumnosTableBody').html(html);
                 $('#alumnosContainer').fadeIn().css('display', 'block');
+
+                // Agregar evento para habilitar/deshabilitar los botones
+                $('.alumno-radio').change(function () {
+                    // Deshabilitar todos los botones
+                    $('.gestionarNotas').prop('disabled', true);
+
+                    // Habilitar solo el botón de la fila seleccionada
+                    let selectedAlumnoId = $('input[name="alumno"]:checked').val();
+                    $(`button[data-id="${selectedAlumnoId}"]`).prop('disabled', false);
+                    // Ocultar las notas al cambiar de alumno
+                    $('#notasContainer').hide();
+                });
             } else {
                 $('#alumnosTableBody').html('<tr><td colspan="6" class="text-center">No hay alumnos en este curso</td></tr>');
                 $('#alumnosContainer').fadeIn().css('display', 'block');
@@ -129,7 +154,7 @@ $(document).ready(function () {
                                         <input type="number" class="form-control nota-input" 
                                             data-id="${unidad.ID}" 
                                             data-tipo="Unidad_Formativa" 
-                                            step="0.01" min="0" max="10">
+                                            step="0.01" min="0" max="10" >
                                     </td>
                                 </tr>`;
                             });
@@ -176,6 +201,17 @@ $(document).ready(function () {
             console.error("❌ Error al obtener las notas del alumno:", textStatus, errorThrown);
         });
     });
+
+    function validarNota(input) {
+        let valor = parseFloat(input.value);
+    
+        if (isNaN(valor) || valor < 0) {
+            input.value = 0;  // Si es menor que 0, lo pone en 0
+        } else if (valor > 10) {
+            input.value = 10; // Si es mayor que 10, lo pone en 10
+        }
+    }
+    
 
     /**
      * Evento click para guardar las notas.

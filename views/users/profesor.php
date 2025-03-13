@@ -43,7 +43,7 @@
 
 
       <li>
-        <a href="/listados/listadosProfesor.php">
+        <a href="/listados/listadosProfesor.php" target="_blank">
           <i class="fas fa-list"></i> Listar Todos los Profesores
         </a>
       </li>
@@ -113,7 +113,7 @@
             <!-- Formulario de búsqueda -->
             <form id="formBuscar">
               <div class="mb-3">
-                <label for="criterioBusqueda" class="form-label">Criterio de búsqueda:</label>
+                <label for="criterioBusqueda" class="form-label">Criterio de búsqueda: se podrá buscar uno de estos criterios DNI, Apellido1, Apellido2, Nombre</label>
                 <input type="text" id="criterioBusqueda" class="form-control" placeholder="Ingrese criterio..." />
               </div>
               <button type="button" class="btn btn-primary" onclick="buscarRegistros()">Buscar</button>
@@ -124,7 +124,8 @@
                 <tr>
                   <th>ID</th>
                   <th>Nombre</th>
-                  <th>Apellido</th>
+                  <th>Apellido1</th>
+                  <th>Apellido2</th>
                   <th>Acción</th>
                 </tr>
               </thead>

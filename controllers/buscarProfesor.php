@@ -10,8 +10,8 @@ file_put_contents('debug.log', "Criterio: $criterio\n", FILE_APPEND);
 file_put_contents('debug.log', "Criterio de búsqueda: $criterio\n", FILE_APPEND);
 
 // Preparar y ejecutar la consulta
-$query = $conn->prepare("SELECT ID_Profesor, Nombre, Apellido1 FROM profesor WHERE Nombre LIKE ? OR Apellido1 LIKE ? OR ID_Profesor LIKE ?");
-$query->bind_param("sss", $criterio_param, $criterio_param, $criterio_param);
+$query = $conn->prepare("SELECT ID_Profesor, Nombre, Apellido1, Apellido2 FROM profesor WHERE Nombre LIKE ? OR Apellido1 LIKE ? OR Apellido2 LIKE ? OR ID_Profesor LIKE ?");
+$query->bind_param("ssss", $criterio_param, $criterio_param, $criterio_param, $criterio_param);
 $criterio_param = "%$criterio%";
 $query->execute();
 

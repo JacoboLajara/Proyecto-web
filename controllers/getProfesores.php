@@ -17,3 +17,5 @@ $registro = $result->fetch_assoc(); // Obtener el resultado como un array asocia
 header('Content-Type: application/json');
 echo json_encode($registro);
 ?>
+
+

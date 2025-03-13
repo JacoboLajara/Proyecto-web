@@ -23,7 +23,7 @@
         <li><a href="./views/users/backoffice.php"><i class="fas fa-home"></i> Volver al panel central</a></li>
 
             <li>
-                <a href="#" id="linkNotas">
+                <a href="#" id="linkNotas" target="_blank">
                     <i class="fas fa-list"></i> Listado de notas por alumno y curso
                 </a>
             </li>

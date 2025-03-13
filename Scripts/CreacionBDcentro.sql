@@ -145,6 +145,15 @@ CREATE TABLE Alumno_Curso (
     FOREIGN KEY (ID_Curso) REFERENCES Curso(ID_Curso) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+CREATE TABLE profesor_curso (
+    ID_Profesor VARCHAR(9),
+    ID_Curso VARCHAR(12),
+    Fecha_Matricula DATE NOT NULL,
+    Estado ENUM('Activo', 'Baja', 'Finalizado') NOT NULL DEFAULT 'Activo',
+    PRIMARY KEY (ID_Profesor, ID_Curso),
+    FOREIGN KEY (ID_Profesor) REFERENCES profesor(ID_Profesor) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (ID_Curso) REFERENCES Curso(ID_Curso) ON DELETE CASCADE ON UPDATE CASCADE
+);
 
 -- Crear la tabla Unidad_Formativa (para módulos de cursos oficiales)
 CREATE TABLE Unidad_Formativa (
