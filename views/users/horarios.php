@@ -23,7 +23,7 @@
         <h2>Panel de control de horarios</h2>
         <ul>
             <li><a href="./views/users/backoffice.php"><i class="fas fa-home"></i> Volver al panel central</a></li>
-            <li> <a href="/listados/ListadoHorarios.php">
+            <li> <a href="/listados/ListadoHorarios.php" target="_blank">
                     <i class="fas fa-list"></i> Listar Todos los Horarios ocupados
                 </a>
             </li>

@@ -41,7 +41,7 @@
                 </a>
             </li>
             <li>
-                <a href="/listados/listadosAulas.php">
+                <a href="/listados/listadosAulas.php" target="_blank">
                     <i class="fas fa-list"></i> Listado de todas las aulas
                 </a>
             </li>

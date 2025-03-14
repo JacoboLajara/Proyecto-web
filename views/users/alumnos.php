@@ -43,7 +43,7 @@
       </li>
       <!-- Enlace para listar alumnos -->
       <li>
-        <a href="/listados/listadosAlumnos.php">
+        <a href="/listados/listadosAlumnos.php" target="_blank">
           <i class="fas fa-list"></i> Listar Todos los Alumnos
         </a>
       </li>

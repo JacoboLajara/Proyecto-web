@@ -88,8 +88,8 @@ class HorariosModel
     {
         // Verificar si hay solapamiento y obtener el horario ya asignado
         $query = "SELECT ah.Hora_Inicio, ah.Hora_Fin, c.Nombre AS Curso
-                  FROM Asignacion_Horario ah
-                  INNER JOIN Curso c ON ah.ID_Curso = c.ID_Curso
+                  FROM asignacion_horario ah
+                  INNER JOIN curso c ON ah.ID_Curso = c.ID_Curso
                   WHERE ah.ID_Aula = ? AND ah.Dia = ? 
                   AND ((? BETWEEN ah.Hora_Inicio AND ah.Hora_Fin)
                   OR (? BETWEEN ah.Hora_Inicio AND ah.Hora_Fin)
@@ -142,8 +142,8 @@ class HorariosModel
                      Hora_Inicio, Hora_Fin, 
                      Tarde_Inicio, Tarde_Fin, 
                      c.Nombre AS Curso
-              FROM Asignacion_Horario ah
-              INNER JOIN Curso c ON ah.ID_Curso = c.ID_Curso
+              FROM asignacion_horario ah
+              INNER JOIN curso c ON ah.ID_Curso = c.ID_Curso
               WHERE ah.ID_Aula = ?
               ORDER BY FIELD(Dia, 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'), Hora_Inicio";
 
@@ -163,11 +163,11 @@ class HorariosModel
      */
     public function obtenerHorariosPorAlumno($idAlumno)
     {
-        $sql = "SELECT c.Nombre AS Curso, ah.Dia, ah.Hora_Inicio, ah.Hora_Fin, a.Nombre AS Aula
-            FROM Alumno_Curso ac
-            JOIN Curso c ON ac.ID_Curso = c.ID_Curso
-            JOIN Asignacion_Horario ah ON ah.ID_Curso = c.ID_Curso
-            JOIN Aula a ON ah.ID_Aula = a.ID_Aula
+        $sql = "SELECT c.Nombre AS Curso, ah.Dia, ah.Hora_Inicio, ah.Hora_Fin, ah.Tarde_Inicio, ah.Tarde_Fin, a.Nombre AS Aula
+            FROM alumno_curso ac
+            JOIN curso c ON ac.ID_Curso = c.ID_Curso
+            JOIN asignacion_horario ah ON ah.ID_Curso = c.ID_Curso
+            JOIN aula a ON ah.ID_Aula = a.ID_Aula
             WHERE ac.ID_Alumno = ?
             ORDER BY FIELD(ah.Dia, 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'), ah.Hora_Inicio";
 
@@ -198,9 +198,9 @@ class HorariosModel
      */
     public function getHorariosPorCurso($cursoId, $aulaId = null)
     {
-        $query = "SELECT ah.Dia, ah.Hora_Inicio, ah.Hora_Fin, a.Nombre AS Aula, ah.ID_Aula
-              FROM Asignacion_Horario ah
-              JOIN Aula a ON ah.ID_Aula = a.ID_Aula
+        $query = "SELECT ah.Dia, ah.Hora_Inicio, ah.Hora_Fin,ah.Tarde_Inicio, ah.Tarde_Fin, a.Nombre AS Aula, ah.ID_Aula
+              FROM asignacion_horario ah
+              JOIN aula a ON ah.ID_Aula = a.ID_Aula
               WHERE ah.ID_Curso = ?";
 
         // Si el aula se especifica, también filtramos por ella
@@ -230,7 +230,7 @@ class HorariosModel
      */
     public function obtenerHorariosPorProfesor($idProfesor)
     {
-        $sql = "SELECT c.Nombre AS Curso, ah.Dia, ah.Hora_Inicio, ah.Hora_Fin, a.Nombre AS Aula
+        $sql = "SELECT c.Nombre AS Curso, ah.Dia, ah.Hora_Inicio, ah.Hora_Fin, ah.Tarde_Inicio, ah.Tarde_Fin, a.Nombre AS Aula
             FROM profesor_curso pc
             JOIN curso c ON pc.ID_Curso = c.ID_Curso
             JOIN asignacion_horario ah ON ah.ID_Curso = c.ID_Curso

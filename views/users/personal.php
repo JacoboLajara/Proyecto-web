@@ -42,7 +42,7 @@
                 </a>
             </li>
             <li>
-                <a href="/listados/listadosPersonal.php">
+                <a href="/listados/listadosPersonal.php" target="_blank">
                     <i class="fas fa-list"></i> Listado de todo el personal no docente
                 </a>
             </li>

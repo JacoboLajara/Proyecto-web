@@ -253,8 +253,6 @@ CREATE TABLE Notificacion_Curso (
 
 
 
-
-
 -- Crear la tabla Asignacion_Horario para asignar horarios a aulas y cursos
 CREATE TABLE Asignacion_Horario (
     ID_Asignacion INT PRIMARY KEY AUTO_INCREMENT,

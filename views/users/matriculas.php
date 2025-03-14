@@ -14,7 +14,7 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-        <h2>Panel de control de aulas</h2>
+        <h2>Panel de Mantenimiento de matriculas</h2>
         <ul>
         <li><a href="./views/users/backoffice.php"><i class="fas fa-home"></i> Volver al panel central</a></li>
             <li>

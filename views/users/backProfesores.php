@@ -67,7 +67,8 @@ file_put_contents('debug.log', "DEBUG (panelAlumno.php) - Rol en sesión: " . ($
             <!-- 📌 Listado de todos los cursos -->
             <li><a href="/../../listados/listadoCursos.php" target="_blank"> 📄 Listado de todos los cursos</a></li>
             <!-- 📌 Listado de cursos con módulos y unidades formativas -->
-            <li><a href="/listados/listadoCursoDetallePorProfesor.php" target="_blank">📄 Listado detalle de tus Cursos y horarios</a></li>
+            <li><a href="/listados/listadoCursoDetallePorProfesor.php" target="_blank">📄 Listado detalle de tus Cursos
+                    y horarios</a></li>
 
             <li><a href="/mainpage.php?route=createNotas"><i class="fas fa-clipboard"></i> Gestión de Notas</a></li>
             <li> <a href="/listados/ListadoHorarios.php"><i class="fas fa-list"></i> Listar Todos los Horarios</a></li>
@@ -87,7 +88,7 @@ file_put_contents('debug.log', "DEBUG (panelAlumno.php) - Rol en sesión: " . ($
         </div>
 
         <!-- Sección de Notas -->
-       
+
 
         <!-- Sección de Notificaciones -->
         <div class="section">
@@ -96,7 +97,8 @@ file_put_contents('debug.log', "DEBUG (panelAlumno.php) - Rol en sesión: " . ($
                 <ul>
                     <?php foreach ($notificaciones as $notificacion): ?>
                         <li><?php echo htmlspecialchars($notificacion['Mensaje']); ?> - Fecha:
-                            <?php echo htmlspecialchars($notificacion['Fecha']); ?></li>
+                            <?php echo htmlspecialchars($notificacion['Fecha']); ?>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
             <?php else: ?>
@@ -110,20 +112,32 @@ file_put_contents('debug.log', "DEBUG (panelAlumno.php) - Rol en sesión: " . ($
             <?php if (!empty($horarios)): ?>
                 <table border="1" cellpadding="10" cellspacing="0">
                     <tr>
-                        <th>Curso</th>
-                        <th>Día</th>
+                        <th rowspan="2">Curso</th>
+                        <th rowspan="2" >Día</th>
+                        <th colspan="2">Mañana</th> 
+                        <th colspan="2">Tarde</th> 
+                        <th rowspan="2">Aula</th>
+                    </tr>
+                    <tr>
+                        
                         <th>Hora Inicio</th>
                         <th>Hora Fin</th>
-                        <th>Aula</th>
+                        <th>Hora Inicio</th>
+                        <th>Hora Fin</th>
+                        
                     </tr>
+
                     <?php foreach ($horarios as $horario): ?>
                         <tr>
-                            <td><?php echo htmlspecialchars($horario['Curso']); ?></td>
-                            <td><?php echo htmlspecialchars($horario['Dia']); ?></td>
-                            <td><?php echo htmlspecialchars($horario['Hora_Inicio']); ?></td>
-                            <td><?php echo htmlspecialchars($horario['Hora_Fin']); ?></td>
-                            <td><?php echo htmlspecialchars($horario['Aula']); ?></td>
+                            <td><?php echo htmlspecialchars($horario['Curso'] ?? ''); ?></td>
+                            <td><?php echo htmlspecialchars($horario['Dia'] ?? ''); ?></td>
+                            <td><?php echo htmlspecialchars($horario['Hora_Inicio'] ?? '--:--'); ?></td>
+                            <td><?php echo htmlspecialchars($horario['Hora_Fin'] ?? '--:--'); ?></td>
+                            <td><?php echo htmlspecialchars($horario['Tarde_Inicio'] ?? '--:--'); ?></td>
+                            <td><?php echo htmlspecialchars($horario['Tarde_Fin'] ?? '--:--'); ?></td>
+                            <td><?php echo htmlspecialchars($horario['Aula'] ?? '--:--'); ?></td>
                         </tr>
+
                     <?php endforeach; ?>
                 </table>
             <?php else: ?>

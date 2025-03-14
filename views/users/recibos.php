@@ -29,7 +29,7 @@
     <li><a href="./views/users/backoffice.php"><i class="fas fa-home"></i> Volver al panel central</a></li>
 
       <li>
-        <a href="/listados/listadoRecibos.php" id="linkListadoRecibos" data-bs-toggle="tooltip"
+        <a href="/listados/listadoRecibos.php" id="linkListadoRecibos" target="_blank" data-bs-toggle="tooltip"
           title="Generar PDF de recibos según criterios seleccionados">
           <i class="fas fa-file-pdf-o"></i> Generar listado de Recibos
         </a>

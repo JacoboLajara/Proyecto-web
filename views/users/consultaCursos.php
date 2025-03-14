@@ -39,7 +39,7 @@ if ($result) {
                 </a>
             </li>
             <li>
-                <a href="/listados/listadoCursoDetalle.php">
+                <a href="/listados/listadoCursoDetalle.php" target="_blank">
                     <i class="fas fa-list"></i> Listado de todos los cursos
                 </a>
             </li>

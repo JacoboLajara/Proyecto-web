@@ -273,18 +273,21 @@ class NotasModel
     {
         $sql = "
             SELECT 
-                n.ID_Nota,
-                n.Tipo_Nota,
-                COALESCE(m.Nombre, uf.Nombre) AS Nombre,
+                 n.ID_Nota,
+                 n.Tipo_Nota,
+                c.Nombre AS Curso, -- Curso correcto
+                m.Nombre AS Modulo, -- Módulo correcto
+                uf.Nombre AS Unidad_Formativa, -- Unidad formativa correcta
                 n.Calificación,
-                n.Fecha_Registro,
-                c.Nombre AS Curso
+                n.Fecha_Registro
             FROM Nota n
-            LEFT JOIN Modulo m ON n.ID_Modulo = m.ID_Modulo
-            LEFT JOIN Unidad_Formativa uf ON n.ID_Unidad_Formativa = uf.ID_Unidad_Formativa
-            LEFT JOIN Curso c ON n.ID_Curso = c.ID_Curso
+            LEFT JOIN Curso c ON n.ID_Curso = c.ID_Curso -- Curso desde la nota
+            LEFT JOIN Modulo m ON n.ID_Modulo = m.ID_Modulo -- Módulo directo
+            LEFT JOIN Unidad_Formativa uf ON n.ID_Unidad_Formativa = uf.ID_Unidad_Formativa -- Unidad formativa directa
+            LEFT JOIN Curso_Modulo cm ON m.ID_Modulo = cm.ID_Modulo -- Relación Módulo -> Curso
+            LEFT JOIN Curso c2 ON cm.ID_Curso = c2.ID_Curso -- Alternativa si el curso está en Curso_Modulo
             WHERE n.ID_Alumno = ?
-            ORDER BY n.Fecha_Registro DESC
+            ORDER BY c.Nombre, n.Fecha_Registro DESC;
         ";
 
         $stmt = $this->conn->prepare($sql);

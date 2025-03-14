@@ -95,11 +95,15 @@ $('#matriculaForm').on('submit', function (e) {
 document.getElementById('id_curso').addEventListener('change', function () {
     let cursoId = this.value;
     let link = document.getElementById('linkMatriculas');
+
     if (cursoId !== "") {
         // Actualiza la URL con el parámetro idCurso
         link.href = "/listados/listadoMatriculas.php?idCurso=" + encodeURIComponent(cursoId);
+        link.setAttribute("target", "_blank"); // Abre en nueva pestaña
     } else {
         // Si no hay curso seleccionado, deshabilita el enlace
         link.href = "#";
+        link.removeAttribute("target"); // Evita que enlaces vacíos se abran en otra pestaña
     }
 });
+
