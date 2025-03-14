@@ -226,11 +226,11 @@ switch ($route) {
         $controller->create();
         exit;
 
-        case 'storeAsignacion':
-            header('Content-Type: application/json; charset=utf-8');
-            $controller = new MatricularProfesoresController();
-            $controller->store();
-            exit;
+    case 'storeAsignacion':
+        header('Content-Type: application/json; charset=utf-8');
+        $controller = new MatricularProfesoresController();
+        $controller->store();
+        exit;
 
     case 'getAlumnosMatriculados':
         if (ob_get_length()) {
@@ -238,6 +238,10 @@ switch ($route) {
         }
         $controller = new MatriculasController();
         $controller->getAlumnosMatriculados();
+        exit;
+    case 'listaAlumnos':
+        $controller = new MatriculasController();
+        $controller->mostrarVistaListaAlumnos();
         exit;
 
     case 'bajaAlumnos':

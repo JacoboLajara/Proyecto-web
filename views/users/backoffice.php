@@ -88,19 +88,12 @@ echo "</pre>";*/
                     <li><a href="ayuda.php"><i class="fas fa-question-circle"></i> Ayuda</a></li>
 
 
-                <?php elseif ($rol === 'Profesor'): ?>
-
-                    <!-- 📌 Listado de todos los cursos -->
-                    <li><a href="/../../listados/listadoCursos.php" target="_blank"> 📄 Listado de Cursos</a></li>
-                    <!-- 📌 Listado de cursos con módulos y unidades formativas -->
-                    <li><a href="/listados/listadoCursoDetallePorProfesor.php" target="_blank">📄 Listado de Cursos con Módulos y Unidades</a></li>
-
-                    <li><a href="/mainpage.php?route=createNotas"><i class="fas fa-clipboard"></i> Gestión de Notas</a></li>
-                    <li> <a href="/listados/ListadoHorarios.php"><i class="fas fa-list"></i> Listar Todos los Horarios</a></li>
-                    <li><a href="/mainpage.php?route=createNotificacion"><i class="fas fa-bell"></i> Gestión de
-                            Notificaciones</a></li>
-                    <li><a href="ayuda.php"><i class="fas fa-question-circle"></i> Ayuda</a></li>
-
+                <?php elseif ($rol === 'Profesor'): 
+                    if ($rol === 'Profesor') {
+                    header("Location: /views/users/backProfesores.php");
+                    exit();
+                }
+                ?>
                 <?php endif; ?>
                 <?php
                 if ($rol === 'Alumno') {

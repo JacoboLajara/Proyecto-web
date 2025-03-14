@@ -10,8 +10,8 @@ file_put_contents('debug.log', "Criterio: $criterio\n", FILE_APPEND);
 file_put_contents('debug.log', "Criterio de búsqueda: $criterio\n", FILE_APPEND);
 
 // Preparar y ejecutar la consulta
-$query = $conn->prepare("SELECT ID_Aula, Nombre, Capacidad FROM aula WHERE Nombre LIKE ? OR Capacidad LIKE ? OR ID_Aula LIKE ?");
-$query->bind_param("iss", $criterio_param, $criterio_param, $criterio_param);
+$query = $conn->prepare("SELECT ID_Aula, Nombre, Capacidad FROM aula WHERE Nombre LIKE CONCAT('%', ?, '%') OR Capacidad LIKE ? OR ID_Aula LIKE ?");
+$query->bind_param("sss", $criterio_param, $criterio_param, $criterio_param);
 $criterio_param = "%$criterio%";
 $query->execute();
 

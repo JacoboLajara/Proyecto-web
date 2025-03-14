@@ -481,12 +481,24 @@ class CursosModel
 
         // ✅ Consulta para obtener cursos con aulas
         $sqlCursos = $conn->prepare("
-            SELECT c.ID_Curso, c.Nombre, c.Tipo, c.Tipo_cuota, c.Duracion_Horas, c.Precio_Curso, 
-                   pc.Fecha_Matricula, pc.Estado, ah.ID_Aula
-            FROM profesor_curso pc
-            JOIN Curso c ON pc.ID_Curso = c.ID_Curso
-            LEFT JOIN Asignacion_Horario ah ON c.ID_Curso = ah.ID_Curso
-            WHERE pc.ID_Profesor = ?
+           SELECT 
+             c.ID_Curso, 
+             c.Nombre, 
+             c.Tipo, 
+             c.Tipo_cuota, 
+             c.Duracion_Horas, 
+             c.Precio_Curso, 
+             pc.Fecha_Matricula, 
+            pc.Estado, 
+        GROUP_CONCAT(
+                CONCAT(ah.Dia, ' de ', TIME_FORMAT(ah.Hora_Inicio, '%H:%i'), ' a ', TIME_FORMAT(ah.Hora_Fin, '%H:%i'))
+                ORDER BY ah.Dia SEPARATOR '\n'
+        ) AS Horarios
+        FROM profesor_curso pc
+        JOIN Curso c ON pc.ID_Curso = c.ID_Curso
+        LEFT JOIN Asignacion_Horario ah ON c.ID_Curso = ah.ID_Curso
+        WHERE pc.ID_Profesor = ?
+        GROUP BY c.ID_Curso, c.Nombre, c.Tipo, c.Tipo_cuota, c.Duracion_Horas, c.Precio_Curso, pc.Fecha_Matricula, pc.Estado;
         ");
 
         $sqlCursos->bind_param("s", $idProfesor);

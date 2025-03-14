@@ -223,7 +223,32 @@ class HorariosModel
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+/**
+     * Obtiene los horarios de los cursos en los que el alumno está matriculado.
+     * @param string $idAlumno ID del alumno.
+     * @return array Lista de cursos con horarios.
+     */
+    public function obtenerHorariosPorProfesor($idProfesor)
+    {
+        $sql = "SELECT c.Nombre AS Curso, ah.Dia, ah.Hora_Inicio, ah.Hora_Fin, a.Nombre AS Aula
+            FROM profesor_curso pc
+            JOIN curso c ON pc.ID_Curso = c.ID_Curso
+            JOIN asignacion_horario ah ON ah.ID_Curso = c.ID_Curso
+            JOIN aula a ON ah.ID_Aula = a.ID_Aula
+            WHERE pc.ID_Profesor = ?
+            ORDER BY FIELD(ah.Dia, 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'), ah.Hora_Inicio";
 
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("s", $idProfesor);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        // Debug: Imprimir los resultados antes de devolverlos
+        $horarios = $result->fetch_all(MYSQLI_ASSOC);
+
+
+        return $horarios;
+    }
 
 
 }

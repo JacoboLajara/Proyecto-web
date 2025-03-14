@@ -1,12 +1,9 @@
 <?php
 require_once __DIR__ . '/../init.php';
 
-
-
 // Incluir TCPDF y el modelo de cursos
 require_once __DIR__ . '/../libs/tcpdf/tcpdf.php';
 require_once __DIR__ . '/../models/CursosModel.php';
-
 
 // Crear una instancia del modelo
 $model = new CursosModel();
@@ -16,7 +13,7 @@ $pdf = new TCPDF();
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Centro de Formación');
 $pdf->SetTitle('Listado de Cursos');
-$pdf->SetSubject('Listado de Cursos Activos');
+$pdf->SetSubject('Listado de Cursos asignados a un Profesor');
 
 // Establecer márgenes y configuración
 $pdf->SetMargins(10, 10, 10);
@@ -30,16 +27,10 @@ $pdf->Ln(5); // Espaciado antes de la tabla
 
 // **Obtener cursos con módulos y unidades**
 $cursos = $model->getCursosConModulosYUnidadesPorProfesor();
-// 🔴 Depuración: Muestra los datos y detiene la ejecución
-// echo "<pre>";
-// var_dump($cursos);
-// echo "</pre>";
-// exit;
 
 if (!$cursos || !is_array($cursos)) {
     die("No se encontraron cursos.");
 }
-
 
 $pdf->SetFont('helvetica', 'B', 16);
 $pdf->Cell(0, 10, "Listado de cursos activos", 1, 1, 'C', true);
@@ -58,11 +49,22 @@ foreach ($cursos as $curso) {
 
     $pdf->SetFont('helvetica', 'B', 14);
     $pdf->Cell(0, 10, "Curso: " . $curso['Nombre'] . " (ID: " . $curso['ID_Curso'] . ")", 1, 1, 'C', true);
+
     // ✅ Mostrar Aula del curso
     $pdf->SetFont('helvetica', '', 12);
     $aula = isset($curso['ID_Aula']) ? "Aula: " . $curso['ID_Aula'] : "Aula no asignada";
     $pdf->Cell(0, 8, $aula, 1, 1, 'C', true);
-    $pdf->SetFont('helvetica', '', 12);
+
+    // ✅ Mostrar Horarios (cada línea en una celda nueva)
+    if (!empty($curso['Horarios'])) {
+        $horarios = explode("\n", $curso['Horarios']);
+        foreach ($horarios as $horario) {
+            $pdf->Cell(0, 8, "Horario: " . $horario, 1, 1, 'C', true);
+        }
+    } else {
+        $pdf->Cell(0, 8, "Sin horarios asignados", 1, 1, 'C', true);
+    }
+
     $pdf->Cell(0, 8, "Duración: " . $curso['Duracion_Horas'] . " horas", 1, 1, 'C', true);
     $pdf->Ln(4);
 

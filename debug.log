@@ -1479,3 +1479,755 @@ DEBUG (init.php) - session_id(): 6953107e4b6483fdddfb022fd5af225a
 Conexión exitosa
 Método: GET - URI: /mainpage.php - IP: ::1
 Valor de route : home
+DEBUG (init.php) - session_id(): e92458b8cf46fc7ee318519995f27575
+Conexión exitosa
+Método: GET - URI: /mainpage.php - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): e92458b8cf46fc7ee318519995f27575
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): e92458b8cf46fc7ee318519995f27575
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): e92458b8cf46fc7ee318519995f27575
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): e92458b8cf46fc7ee318519995f27575
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 11223344C
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 11223344C
+DEBUG (login.php) - el password guardado es: $2y$10$cWasvLLXvXeBcN0LeTqaUuIWOBnETlf8ksPhFoi1Iv1KpVyVx0azC
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 11223344C
+DEBUG (init.php) - session_id(): 72e744129e4f63e9ae1024d9abaf50c1
+Conexión exitosa
+Método: GET - URI: /mainpage.php - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): 72e744129e4f63e9ae1024d9abaf50c1
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 72e744129e4f63e9ae1024d9abaf50c1
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): 72e744129e4f63e9ae1024d9abaf50c1
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 72e744129e4f63e9ae1024d9abaf50c1
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 11223344C
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 11223344C
+DEBUG (login.php) - el password guardado es: $2y$10$cWasvLLXvXeBcN0LeTqaUuIWOBnETlf8ksPhFoi1Iv1KpVyVx0azC
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 11223344C
+DEBUG (init.php) - session_id(): dd961c7abf5563cce86ed2cab407e01c
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): dd961c7abf5563cce86ed2cab407e01c
+DEBUG (login.php) - Usuario en sesión: 11223344C
+DEBUG (login.php) - Rol en sesión: Profesor
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): dd961c7abf5563cce86ed2cab407e01c
+Conexión exitosa
+Método: GET - URI: /mainpage.php - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): dd961c7abf5563cce86ed2cab407e01c
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): dd961c7abf5563cce86ed2cab407e01c
+DEBUG (login.php) - Usuario en sesión: 11223344C
+DEBUG (login.php) - Rol en sesión: Profesor
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): dd961c7abf5563cce86ed2cab407e01c
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): dd961c7abf5563cce86ed2cab407e01c
+DEBUG (login.php) - Usuario en sesión: 11223344C
+DEBUG (login.php) - Rol en sesión: Profesor
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): dd961c7abf5563cce86ed2cab407e01c
+Conexión exitosa
+Método: GET - URI: /mainpage.php - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): dd961c7abf5563cce86ed2cab407e01c
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): dd961c7abf5563cce86ed2cab407e01c
+DEBUG (login.php) - Usuario en sesión: 11223344C
+DEBUG (login.php) - Rol en sesión: Profesor
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): dd961c7abf5563cce86ed2cab407e01c
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): dd961c7abf5563cce86ed2cab407e01c
+DEBUG (login.php) - Usuario en sesión: 11223344C
+DEBUG (login.php) - Rol en sesión: Profesor
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): dd961c7abf5563cce86ed2cab407e01c
+Conexión exitosa
+Método: GET - URI: /mainpage.php - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): dd961c7abf5563cce86ed2cab407e01c
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): dd961c7abf5563cce86ed2cab407e01c
+DEBUG (login.php) - Usuario en sesión: 11223344C
+DEBUG (login.php) - Rol en sesión: Profesor
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): dd961c7abf5563cce86ed2cab407e01c
+Conexión exitosa
+Método: GET - URI: /mainpage.php - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): dd961c7abf5563cce86ed2cab407e01c
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): dd961c7abf5563cce86ed2cab407e01c
+DEBUG (login.php) - Usuario en sesión: 11223344C
+DEBUG (login.php) - Rol en sesión: Profesor
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): dd961c7abf5563cce86ed2cab407e01c
+Conexión exitosa
+Método: GET - URI: /mainpage.php - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): dd961c7abf5563cce86ed2cab407e01c
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): dd961c7abf5563cce86ed2cab407e01c
+DEBUG (login.php) - Usuario en sesión: 11223344C
+DEBUG (login.php) - Rol en sesión: Profesor
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): dd961c7abf5563cce86ed2cab407e01c
+Conexión exitosa
+Método: GET - URI: /mainpage.php - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): dd961c7abf5563cce86ed2cab407e01c
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): dd961c7abf5563cce86ed2cab407e01c
+DEBUG (login.php) - Usuario en sesión: 11223344C
+DEBUG (login.php) - Rol en sesión: Profesor
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): d4a09b5813dd42d05941cad5c48b9779
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): d4a09b5813dd42d05941cad5c48b9779
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): d4a09b5813dd42d05941cad5c48b9779
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): d4a09b5813dd42d05941cad5c48b9779
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 00000000A
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+DEBUG (login.php) - el password guardado es: $2y$10$/fr.pdPxjNXhkBmz3ZWucu8dhGMXbfx.08GYbfZa/Jl6ncE71vr.i
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+Conexión exitosa
+DEBUG (init.php) - session_id(): 1a0106153c22c34d3fc6e2d78bebea73
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 1a0106153c22c34d3fc6e2d78bebea73
+DEBUG (login.php) - Usuario en sesión: 00000000A
+DEBUG (login.php) - Rol en sesión: Administrador
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): 1a0106153c22c34d3fc6e2d78bebea73
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createNotificacion - IP: ::1
+Valor de route : createNotificacion
+Conexión exitosa
+Ejecutando NotificacionController::create()
+DEBUG (init.php) - session_id(): 1a0106153c22c34d3fc6e2d78bebea73
+Conexión exitosa
+Método: GET - URI: /router.php?route=getUsuariosPorTipo&type=Profesor - IP: ::1
+Valor de route : getUsuariosPorTipo
+Conexión exitosa
+Usuarios obtenidos para el tipo Profesor: Array
+(
+    [0] => Array
+        (
+            [ID_Usuario] => 11223344C
+            [Nombre] => Ana
+        )
+
+    [1] => Array
+        (
+            [ID_Usuario] => 33445566G
+            [Nombre] => David
+        )
+
+)
+
+DEBUG (init.php) - session_id(): 1a0106153c22c34d3fc6e2d78bebea73
+Conexión exitosa
+Método: POST - URI: /router.php?route=storeNotificacion - IP: ::1
+Valor de route : storeNotificacion
+Conexión exitosa
+Entrando en store() - Mensaje: Buenos días Ana, ya esta lista tu notificación. Un saludo, Tipo: Profesor
+DEBUG (init.php) - session_id(): 1a0106153c22c34d3fc6e2d78bebea73
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createNotificacion - IP: ::1
+Valor de route : createNotificacion
+Conexión exitosa
+Ejecutando NotificacionController::create()
+DEBUG (init.php) - session_id(): a06f1dc63472af0b301e92becfea50ea
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): a06f1dc63472af0b301e92becfea50ea
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): a06f1dc63472af0b301e92becfea50ea
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): a06f1dc63472af0b301e92becfea50ea
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 11223344C
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 11223344C
+DEBUG (login.php) - el password guardado es: $2y$10$cWasvLLXvXeBcN0LeTqaUuIWOBnETlf8ksPhFoi1Iv1KpVyVx0azC
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 11223344C
+DEBUG (init.php) - session_id(): 88d14202b376bc59bd2d036afe8e4dd1
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createNotificacion - IP: ::1
+Valor de route : createNotificacion
+Conexión exitosa
+Ejecutando NotificacionController::create()
+DEBUG (init.php) - session_id(): 88d14202b376bc59bd2d036afe8e4dd1
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createNotas - IP: ::1
+Valor de route : createNotas
+Conexión exitosa
+DEBUG (init.php) - session_id(): 88d14202b376bc59bd2d036afe8e4dd1
+Conexión exitosa
+Método: GET - URI: /mainpage.php - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): 17edc75bf2e8f89fad4a6bfb12161623
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 17edc75bf2e8f89fad4a6bfb12161623
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): 17edc75bf2e8f89fad4a6bfb12161623
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 17edc75bf2e8f89fad4a6bfb12161623
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 00000000A
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+DEBUG (login.php) - el password guardado es: $2y$10$/fr.pdPxjNXhkBmz3ZWucu8dhGMXbfx.08GYbfZa/Jl6ncE71vr.i
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+Conexión exitosa
+DEBUG (init.php) - session_id(): b0304351695cc49b9c4ee26b624714d1
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): b0304351695cc49b9c4ee26b624714d1
+DEBUG (login.php) - Usuario en sesión: 00000000A
+DEBUG (login.php) - Rol en sesión: Administrador
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): b0304351695cc49b9c4ee26b624714d1
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createMatricula - IP: ::1
+Valor de route : createMatricula
+Conexión exitosa
+DEBUG (init.php) - session_id(): b0304351695cc49b9c4ee26b624714d1
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listaAlumnos - IP: ::1
+Valor de route : listaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): b0304351695cc49b9c4ee26b624714d1
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createMatricula - IP: ::1
+Valor de route : createMatricula
+Conexión exitosa
+DEBUG (init.php) - session_id(): b0304351695cc49b9c4ee26b624714d1
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=bajaAlumnos - IP: ::1
+Valor de route : bajaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): b0304351695cc49b9c4ee26b624714d1
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createMatricula - IP: ::1
+Valor de route : createMatricula
+Conexión exitosa
+DEBUG (init.php) - session_id(): b0304351695cc49b9c4ee26b624714d1
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listaAlumnos - IP: ::1
+Valor de route : listaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): b0304351695cc49b9c4ee26b624714d1
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=getAlumnosMatriculados&id_curso=ADGG200 - IP: ::1
+Valor de route : getAlumnosMatriculados
+Conexión exitosa
+DEBUG (init.php) - session_id(): b0304351695cc49b9c4ee26b624714d1
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=getAlumnosMatriculados&id_curso=CUR001 - IP: ::1
+Valor de route : getAlumnosMatriculados
+Conexión exitosa
+DEBUG (init.php) - session_id(): b0304351695cc49b9c4ee26b624714d1
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=getAlumnosMatriculados&id_curso=CUR002 - IP: ::1
+Valor de route : getAlumnosMatriculados
+Conexión exitosa
+DEBUG (init.php) - session_id(): cfa19ba6dfe023f966034fe4bd027350
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): cfa19ba6dfe023f966034fe4bd027350
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): cfa19ba6dfe023f966034fe4bd027350
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): cfa19ba6dfe023f966034fe4bd027350
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): cfa19ba6dfe023f966034fe4bd027350
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): cfa19ba6dfe023f966034fe4bd027350
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 00000000A
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+DEBUG (login.php) - el password guardado es: $2y$10$/fr.pdPxjNXhkBmz3ZWucu8dhGMXbfx.08GYbfZa/Jl6ncE71vr.i
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+Conexión exitosa
+DEBUG (init.php) - session_id(): 1cd4ec85732bb4c44d261793ae90507d
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 1cd4ec85732bb4c44d261793ae90507d
+DEBUG (login.php) - Usuario en sesión: 00000000A
+DEBUG (login.php) - Rol en sesión: Administrador
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): 1cd4ec85732bb4c44d261793ae90507d
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createMatricula - IP: ::1
+Valor de route : createMatricula
+Conexión exitosa
+DEBUG (init.php) - session_id(): 1cd4ec85732bb4c44d261793ae90507d
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=bajaAlumnos - IP: ::1
+Valor de route : bajaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): 1cd4ec85732bb4c44d261793ae90507d
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createMatricula - IP: ::1
+Valor de route : createMatricula
+Conexión exitosa
+DEBUG (init.php) - session_id(): 1cd4ec85732bb4c44d261793ae90507d
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listaAlumnos - IP: ::1
+Valor de route : listaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): 1cd4ec85732bb4c44d261793ae90507d
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=getAlumnosMatriculados&id_curso=ADGG200 - IP: ::1
+Valor de route : getAlumnosMatriculados
+Conexión exitosa
+DEBUG (init.php) - session_id(): 10dd5f5c88d20837b0c5e7c07785aed6
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 10dd5f5c88d20837b0c5e7c07785aed6
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): 10dd5f5c88d20837b0c5e7c07785aed6
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 10dd5f5c88d20837b0c5e7c07785aed6
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): 10dd5f5c88d20837b0c5e7c07785aed6
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 10dd5f5c88d20837b0c5e7c07785aed6
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 00000000A
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+DEBUG (login.php) - el password guardado es: $2y$10$/fr.pdPxjNXhkBmz3ZWucu8dhGMXbfx.08GYbfZa/Jl6ncE71vr.i
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+Conexión exitosa
+DEBUG (init.php) - session_id(): b883c063265bf246f8f1eb8f599674ba
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): b883c063265bf246f8f1eb8f599674ba
+DEBUG (login.php) - Usuario en sesión: 00000000A
+DEBUG (login.php) - Rol en sesión: Administrador
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): b883c063265bf246f8f1eb8f599674ba
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createMatricula - IP: ::1
+Valor de route : createMatricula
+Conexión exitosa
+DEBUG (init.php) - session_id(): b883c063265bf246f8f1eb8f599674ba
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listaAlumnos - IP: ::1
+Valor de route : listaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): b883c063265bf246f8f1eb8f599674ba
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=getAlumnosMatriculados&id_curso=ADGG200 - IP: ::1
+Valor de route : getAlumnosMatriculados
+Conexión exitosa
+DEBUG (init.php) - session_id(): b883c063265bf246f8f1eb8f599674ba
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=bajaAlumnos - IP: ::1
+Valor de route : bajaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): b883c063265bf246f8f1eb8f599674ba
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=getAlumnosMatriculados&id_curso=ADGG200 - IP: ::1
+Valor de route : getAlumnosMatriculados
+Conexión exitosa
+DEBUG (init.php) - session_id(): b883c063265bf246f8f1eb8f599674ba
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createMatricula - IP: ::1
+Valor de route : createMatricula
+Conexión exitosa
+DEBUG (init.php) - session_id(): b883c063265bf246f8f1eb8f599674ba
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listaAlumnos - IP: ::1
+Valor de route : listaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): b883c063265bf246f8f1eb8f599674ba
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=getAlumnosMatriculados&id_curso=CUR001 - IP: ::1
+Valor de route : getAlumnosMatriculados
+Conexión exitosa
+DEBUG (init.php) - session_id(): 15694e4e6c91a3ef2fde2a5efbe9ef2e
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 15694e4e6c91a3ef2fde2a5efbe9ef2e
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): 15694e4e6c91a3ef2fde2a5efbe9ef2e
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 15694e4e6c91a3ef2fde2a5efbe9ef2e
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): 15694e4e6c91a3ef2fde2a5efbe9ef2e
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 15694e4e6c91a3ef2fde2a5efbe9ef2e
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): 15694e4e6c91a3ef2fde2a5efbe9ef2e
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 15694e4e6c91a3ef2fde2a5efbe9ef2e
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 00000000A
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+DEBUG (login.php) - el password guardado es: $2y$10$/fr.pdPxjNXhkBmz3ZWucu8dhGMXbfx.08GYbfZa/Jl6ncE71vr.i
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+Conexión exitosa
+DEBUG (init.php) - session_id(): 1b5757211a1ca89f65e00c51aba0b73c
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 1b5757211a1ca89f65e00c51aba0b73c
+DEBUG (login.php) - Usuario en sesión: 00000000A
+DEBUG (login.php) - Rol en sesión: Administrador
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): 1b5757211a1ca89f65e00c51aba0b73c
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createMatricula - IP: ::1
+Valor de route : createMatricula
+Conexión exitosa
+DEBUG (init.php) - session_id(): 1b5757211a1ca89f65e00c51aba0b73c
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listaAlumnos - IP: ::1
+Valor de route : listaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): 1b5757211a1ca89f65e00c51aba0b73c
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=getAlumnosMatriculados&id_curso=ADGG200 - IP: ::1
+Valor de route : getAlumnosMatriculados
+Conexión exitosa
+DEBUG (init.php) - session_id(): 1b5757211a1ca89f65e00c51aba0b73c
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=getAlumnosMatriculados&id_curso=CUR001 - IP: ::1
+Valor de route : getAlumnosMatriculados
+Conexión exitosa
+DEBUG (init.php) - session_id(): 1b5757211a1ca89f65e00c51aba0b73c
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createMatricula - IP: ::1
+Valor de route : createMatricula
+Conexión exitosa
+DEBUG (init.php) - session_id(): 1b5757211a1ca89f65e00c51aba0b73c
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listaAlumnos - IP: ::1
+Valor de route : listaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): 1b5757211a1ca89f65e00c51aba0b73c
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=getAlumnosMatriculados&id_curso=ADGG200 - IP: ::1
+Valor de route : getAlumnosMatriculados
+Conexión exitosa
+DEBUG (init.php) - session_id(): 1b5757211a1ca89f65e00c51aba0b73c
+Conexión exitosa
+Método: GET - URI: /mainpage.php - IP: ::1
+Valor de route : home
+Conexión exitosa
+DEBUG (init.php) - session_id(): 1b5757211a1ca89f65e00c51aba0b73c
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 1b5757211a1ca89f65e00c51aba0b73c
+DEBUG (login.php) - Usuario en sesión: 00000000A
+DEBUG (login.php) - Rol en sesión: Administrador
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): 1b5757211a1ca89f65e00c51aba0b73c
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createMatricula - IP: ::1
+Valor de route : createMatricula
+Conexión exitosa
+DEBUG (init.php) - session_id(): 1b5757211a1ca89f65e00c51aba0b73c
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listaAlumnos - IP: ::1
+Valor de route : listaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): 1b5757211a1ca89f65e00c51aba0b73c
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=getAlumnosMatriculados&id_curso=ADGG200 - IP: ::1
+Valor de route : getAlumnosMatriculados
+Conexión exitosa
+DEBUG (init.php) - session_id(): 1b5757211a1ca89f65e00c51aba0b73c
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=getAlumnosMatriculados&id_curso=CUR001 - IP: ::1
+Valor de route : getAlumnosMatriculados
+Conexión exitosa
+DEBUG (init.php) - session_id(): cc91b25b625dc994d2139f4a36f4b779
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): cc91b25b625dc994d2139f4a36f4b779
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): cc91b25b625dc994d2139f4a36f4b779
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): cc91b25b625dc994d2139f4a36f4b779
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): cc91b25b625dc994d2139f4a36f4b779
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): cc91b25b625dc994d2139f4a36f4b779
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 00000000A
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+DEBUG (login.php) - el password guardado es: $2y$10$/fr.pdPxjNXhkBmz3ZWucu8dhGMXbfx.08GYbfZa/Jl6ncE71vr.i
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+Conexión exitosa
+DEBUG (init.php) - session_id(): bddefeee7f4cf5c4a3853c2aea687a02
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): bddefeee7f4cf5c4a3853c2aea687a02
+DEBUG (login.php) - Usuario en sesión: 00000000A
+DEBUG (login.php) - Rol en sesión: Administrador
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): bddefeee7f4cf5c4a3853c2aea687a02
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createMatricula - IP: ::1
+Valor de route : createMatricula
+Conexión exitosa
+DEBUG (init.php) - session_id(): bddefeee7f4cf5c4a3853c2aea687a02
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listaAlumnos - IP: ::1
+Valor de route : listaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): bddefeee7f4cf5c4a3853c2aea687a02
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=getAlumnosMatriculados&id_curso=ADGG200 - IP: ::1
+Valor de route : getAlumnosMatriculados
+Conexión exitosa
+DEBUG (init.php) - session_id(): bddefeee7f4cf5c4a3853c2aea687a02
+Conexión exitosa
+Método: GET - URI: /mainpage.php - IP: ::1
+Valor de route : home
+Conexión exitosa
+DEBUG (init.php) - session_id(): bddefeee7f4cf5c4a3853c2aea687a02
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): bddefeee7f4cf5c4a3853c2aea687a02
+DEBUG (login.php) - Usuario en sesión: 00000000A
+DEBUG (login.php) - Rol en sesión: Administrador
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): bddefeee7f4cf5c4a3853c2aea687a02
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createMatricula - IP: ::1
+Valor de route : createMatricula
+Conexión exitosa
+DEBUG (init.php) - session_id(): bddefeee7f4cf5c4a3853c2aea687a02
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listaAlumnos - IP: ::1
+Valor de route : listaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): bddefeee7f4cf5c4a3853c2aea687a02
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=getAlumnosMatriculados&id_curso=ADGG200 - IP: ::1
+Valor de route : getAlumnosMatriculados
+Conexión exitosa
+DEBUG (init.php) - session_id(): bddefeee7f4cf5c4a3853c2aea687a02
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=getAlumnosMatriculados&id_curso=CUR001 - IP: ::1
+Valor de route : getAlumnosMatriculados
+Conexión exitosa
+DEBUG (init.php) - session_id(): bddefeee7f4cf5c4a3853c2aea687a02
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listaAlumnos - IP: ::1
+Valor de route : listaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): bddefeee7f4cf5c4a3853c2aea687a02
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=bajaAlumnos - IP: ::1
+Valor de route : bajaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): bddefeee7f4cf5c4a3853c2aea687a02
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createMatricula - IP: ::1
+Valor de route : createMatricula
+Conexión exitosa
+DEBUG (init.php) - session_id(): bddefeee7f4cf5c4a3853c2aea687a02
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listaAlumnos - IP: ::1
+Valor de route : listaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): d461415c0ee340c823ccf1b7d1ca2528
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): d461415c0ee340c823ccf1b7d1ca2528
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): d461415c0ee340c823ccf1b7d1ca2528
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): d461415c0ee340c823ccf1b7d1ca2528
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): d461415c0ee340c823ccf1b7d1ca2528
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): d461415c0ee340c823ccf1b7d1ca2528
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 00000000A
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+DEBUG (login.php) - el password guardado es: $2y$10$/fr.pdPxjNXhkBmz3ZWucu8dhGMXbfx.08GYbfZa/Jl6ncE71vr.i
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+Conexión exitosa
+DEBUG (init.php) - session_id(): 3a9dd3a5382a8ea21be062a8d89bd8ec
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 3a9dd3a5382a8ea21be062a8d89bd8ec
+DEBUG (login.php) - Usuario en sesión: 00000000A
+DEBUG (login.php) - Rol en sesión: Administrador
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): 3a9dd3a5382a8ea21be062a8d89bd8ec
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createMatricula - IP: ::1
+Valor de route : createMatricula
+Conexión exitosa
+DEBUG (init.php) - session_id(): 3a9dd3a5382a8ea21be062a8d89bd8ec
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listaAlumnos - IP: ::1
+Valor de route : listaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): 3a9dd3a5382a8ea21be062a8d89bd8ec
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listaAlumnos - IP: ::1
+Valor de route : listaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): 3a9dd3a5382a8ea21be062a8d89bd8ec
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=bajaAlumnos - IP: ::1
+Valor de route : bajaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): 3a9dd3a5382a8ea21be062a8d89bd8ec
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createMatricula - IP: ::1
+Valor de route : createMatricula
+Conexión exitosa
+DEBUG (init.php) - session_id(): 3a9dd3a5382a8ea21be062a8d89bd8ec
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listaAlumnos - IP: ::1
+Valor de route : listaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): 3a9dd3a5382a8ea21be062a8d89bd8ec
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=getAlumnosMatriculados&id_curso=ADGG200 - IP: ::1
+Valor de route : getAlumnosMatriculados
+Conexión exitosa
+DEBUG (init.php) - session_id(): 3a9dd3a5382a8ea21be062a8d89bd8ec
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=getAlumnosMatriculados&id_curso=CUR001 - IP: ::1
+Valor de route : getAlumnosMatriculados
+Conexión exitosa
+DEBUG (init.php) - session_id(): 3a9dd3a5382a8ea21be062a8d89bd8ec
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createMatricula - IP: ::1
+Valor de route : createMatricula
+Conexión exitosa
+DEBUG (init.php) - session_id(): 3a9dd3a5382a8ea21be062a8d89bd8ec
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listaAlumnos - IP: ::1
+Valor de route : listaAlumnos
+Conexión exitosa
+DEBUG (init.php) - session_id(): 3a9dd3a5382a8ea21be062a8d89bd8ec
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=getAlumnosMatriculados&id_curso=ADGG200 - IP: ::1
+Valor de route : getAlumnosMatriculados
+Conexión exitosa
+DEBUG (init.php) - session_id(): 5fdb755ccf364c7926e1d5d5495d9fcf
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 5fdb755ccf364c7926e1d5d5495d9fcf
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): 5fdb755ccf364c7926e1d5d5495d9fcf
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 5fdb755ccf364c7926e1d5d5495d9fcf
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 00000000A
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+DEBUG (login.php) - el password guardado es: $2y$10$/fr.pdPxjNXhkBmz3ZWucu8dhGMXbfx.08GYbfZa/Jl6ncE71vr.i
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+Conexión exitosa
+DEBUG (init.php) - session_id(): 121b9ae1b98920233bfbb2c0f4e50e53
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 121b9ae1b98920233bfbb2c0f4e50e53
+DEBUG (login.php) - Usuario en sesión: 00000000A
+DEBUG (login.php) - Rol en sesión: Administrador
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): 121b9ae1b98920233bfbb2c0f4e50e53
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createAula - IP: ::1
+Valor de route : createAula
+Entrando al caso createAula
+Conexión exitosa
+DEBUG (init.php) - session_id(): 121b9ae1b98920233bfbb2c0f4e50e53
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createAula - IP: ::1
+Valor de route : createAula
+Entrando al caso createAula
+Conexión exitosa
+DEBUG (init.php) - session_id(): 121b9ae1b98920233bfbb2c0f4e50e53
+Conexión exitosa
+Método: GET - URI: /mainpage.php - IP: ::1
+Valor de route : home
+Conexión exitosa
+DEBUG (init.php) - session_id(): 121b9ae1b98920233bfbb2c0f4e50e53
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 121b9ae1b98920233bfbb2c0f4e50e53
+DEBUG (login.php) - Usuario en sesión: 00000000A
+DEBUG (login.php) - Rol en sesión: Administrador
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): 121b9ae1b98920233bfbb2c0f4e50e53
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createAula - IP: ::1
+Valor de route : createAula
+Entrando al caso createAula
+Conexión exitosa
+DEBUG (init.php) - session_id(): 121b9ae1b98920233bfbb2c0f4e50e53
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createAula - IP: ::1
+Valor de route : createAula
+Entrando al caso createAula
+Conexión exitosa
+DEBUG (init.php) - session_id(): 121b9ae1b98920233bfbb2c0f4e50e53
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createAula - IP: ::1
+Valor de route : createAula
+Entrando al caso createAula
+Conexión exitosa
+DEBUG (init.php) - session_id(): 121b9ae1b98920233bfbb2c0f4e50e53
+Conexión exitosa
+Método: GET - URI: /mainpage.php - IP: ::1
+Valor de route : home
+Conexión exitosa
+DEBUG (init.php) - session_id(): 121b9ae1b98920233bfbb2c0f4e50e53
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 121b9ae1b98920233bfbb2c0f4e50e53
+DEBUG (login.php) - Usuario en sesión: 00000000A
+DEBUG (login.php) - Rol en sesión: Administrador
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): 121b9ae1b98920233bfbb2c0f4e50e53
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createAula - IP: ::1
+Valor de route : createAula
+Entrando al caso createAula
+Conexión exitosa
+DEBUG (init.php) - session_id(): 121b9ae1b98920233bfbb2c0f4e50e53
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorario - IP: ::1
+Valor de route : createHorario
+Conexión exitosa
+Conexión exitosa

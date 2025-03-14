@@ -70,6 +70,18 @@ class MatriculasController
         require_once __DIR__ . '/../views/users/bajaAlumnos.php';
     }
 
+     /**
+     * Muestra la vista para listado de  alumnos.
+     *
+     * Carga la vista correspondiente para el proceso de baja de alumnos.
+     *
+     * @return void
+     */
+    public function mostrarVistaListaAlumnos()
+    {
+        require_once __DIR__ . '/../views/users/alumnosCurso.php';
+    }
+
     /**
      * Procesa la matriculación de alumnos en un curso.
      *

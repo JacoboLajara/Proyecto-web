@@ -246,4 +246,5 @@ function mostrarModificarAulas() {
  */
 document.addEventListener('DOMContentLoaded', function () {
     disableFormFieldsAulas();
+    document.getElementById("criterioBusqueda").disabled = false; // 🔹 Forzar activación
 });
