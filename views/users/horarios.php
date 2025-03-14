@@ -27,7 +27,7 @@
                     <i class="fas fa-list"></i> Listar Todos los Horarios ocupados
                 </a>
             </li>
-            <li><a href="#"><i class="fas fa-bell"></i> Ver Notificaciones</a></li>
+            <!-- <li><a href="#"><i class="fas fa-bell"></i> Ver Notificaciones</a></li> -->
             <li><a href="/logout.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
         </ul>
     </div>

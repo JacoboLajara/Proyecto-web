@@ -3327,3 +3327,161 @@ Conexión exitosa
 DEBUG (login.php) - Inicio - session_id(): ac4c91caa332f203e755966cd359c821
 DEBUG (login.php) - Usuario en sesión: No definido
 DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): 9aa0cf100cf20d7aaa4278d194921027
+Conexión exitosa
+Método: GET - URI: /mainpage.php - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): 9aa0cf100cf20d7aaa4278d194921027
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 9aa0cf100cf20d7aaa4278d194921027
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): 9aa0cf100cf20d7aaa4278d194921027
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 9aa0cf100cf20d7aaa4278d194921027
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 22334455E
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Campos incompletos
+DEBUG (init.php) - session_id(): 9aa0cf100cf20d7aaa4278d194921027
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 9aa0cf100cf20d7aaa4278d194921027
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 22334455E
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Campos incompletos
+DEBUG (init.php) - session_id(): 9aa0cf100cf20d7aaa4278d194921027
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 9aa0cf100cf20d7aaa4278d194921027
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 29048298B
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 29048298B
+DEBUG (login.php) - el password guardado es: $2y$10$Prh62oiLyfRp7LxXWs.WeenAM0u4.BAXsq/xiE0lyDD0AuZL1.hE.
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 29048298B
+DEBUG (login.php) - ID_Alumno encontrado: 29048298B
+DEBUG (init.php) - session_id(): 3f1f082344921312681da3bed4a70584
+Conexión exitosa
+Método: GET - URI: /mainpage.php - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): 3f1f082344921312681da3bed4a70584
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 3f1f082344921312681da3bed4a70584
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): 3f1f082344921312681da3bed4a70584
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 3f1f082344921312681da3bed4a70584
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 00000000A
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+DEBUG (login.php) - el password guardado es: $2y$10$jfQwj3HfWENoDEeSOmSsL.EiON1WG46ZuUCSiDhEtDqUA.TLPNNLe
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 00000000A
+Conexión exitosa
+DEBUG (init.php) - session_id(): 2ca8f4afbd050d40a7881f6c5b26d788
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 2ca8f4afbd050d40a7881f6c5b26d788
+DEBUG (login.php) - Usuario en sesión: 00000000A
+DEBUG (login.php) - Rol en sesión: Administrador
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): 2ca8f4afbd050d40a7881f6c5b26d788
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createProfesor - IP: ::1
+Valor de route : createProfesor
+Conexión exitosa
+DEBUG (init.php) - session_id(): 2ca8f4afbd050d40a7881f6c5b26d788
+Conexión exitosa
+Método: POST - URI: /mainpage.php?route=storeProfesor - IP: ::1
+Valor de route : storeProfesor
+Conexión exitosa
+DEBUG (init.php) - session_id(): 2ca8f4afbd050d40a7881f6c5b26d788
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createMatriculaprofesor - IP: ::1
+Valor de route : createMatriculaprofesor
+Conexión exitosa
+DEBUG (init.php) - session_id(): 2ca8f4afbd050d40a7881f6c5b26d788
+Conexión exitosa
+Método: POST - URI: /mainpage.php?route=storeAsignacion - IP: ::1
+Valor de route : storeAsignacion
+Conexión exitosa
+Datos recibidos en storeAsignacion: Array
+(
+)
+
+JSON recibido: {"id_curso":"AC-2025-0001","profesores":["11223344C"]}
+Contenido de data: Array
+(
+    [id_curso] => AC-2025-0001
+    [profesores] => Array
+        (
+            [0] => 11223344C
+        )
+
+)
+
+Insertando asignación para el profesor: 11223344C en curso: AC-2025-0001
+DEBUG (init.php) - session_id(): 2ca8f4afbd050d40a7881f6c5b26d788
+Conexión exitosa
+Método: POST - URI: /mainpage.php?route=storeAsignacion - IP: ::1
+Valor de route : storeAsignacion
+Conexión exitosa
+Datos recibidos en storeAsignacion: Array
+(
+)
+
+JSON recibido: {"id_curso":"AC-2025-0002","profesores":["11223344C"]}
+Contenido de data: Array
+(
+    [id_curso] => AC-2025-0002
+    [profesores] => Array
+        (
+            [0] => 11223344C
+        )
+
+)
+
+Insertando asignación para el profesor: 11223344C en curso: AC-2025-0002
+DEBUG (init.php) - session_id(): 30f6d54751491621dcfc727a590d029a
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 30f6d54751491621dcfc727a590d029a
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): 30f6d54751491621dcfc727a590d029a
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 30f6d54751491621dcfc727a590d029a
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 11223344C
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - El usuario tiene una contraseña vacía. Redirigiendo a cambiar_password.php
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): ecc17022a25581b84a9040a0bb3562e2
+Conexión exitosa
+Método: GET - URI: /mainpage.php - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): ecc17022a25581b84a9040a0bb3562e2
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): ecc17022a25581b84a9040a0bb3562e2
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): ecc17022a25581b84a9040a0bb3562e2
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): ecc17022a25581b84a9040a0bb3562e2
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 11223344C
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 11223344C
+DEBUG (login.php) - el password guardado es: $2y$10$9Gxdl6yujphCMQeYA/QoBOXsTkysLWTf64IwqucxGwn1Ww2eXgfPK
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 11223344C
+DEBUG (init.php) - session_id(): 9e2a9d1c876fd6790d91baf4a7e8f1b0
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createNotas - IP: ::1
+Valor de route : createNotas
+Conexión exitosa

@@ -155,17 +155,17 @@ class NotificacionModel
 
         switch ($tipo) {
             case 'Alumno':
-                $sql = "SELECT ID_Alumno AS ID_Usuario, Nombre FROM Alumno WHERE Fecha_Baja='2000-01-01'";
+                $sql = "SELECT ID_Alumno AS ID_Usuario, Nombre FROM alumno WHERE Fecha_Baja='2000-01-01'";
                 break;
             case 'Profesor':
-                $sql = "SELECT ID_Profesor AS ID_Usuario, Nombre FROM Profesor WHERE Fecha_Baja='2000-01-01'";
+                $sql = "SELECT ID_Profesor AS ID_Usuario, Nombre FROM profesor WHERE Fecha_Baja='2000-01-01'";
                 break;
             case 'Personal':
-                $sql = "SELECT ID_Personal AS ID_Usuario, Nombre FROM Personal_No_Docente WHERE Fecha_Baja ='2000-01-01'";
+                $sql = "SELECT ID_Personal AS ID_Usuario, Nombre FROM personal_no_docente WHERE Fecha_Baja ='2000-01-01'";
                 break;
             case 'Curso':
                 $sql = "SELECT DISTINCT ac.ID_Curso AS ID_Usuario 
-                            FROM Alumno_Curso ac 
+                            FROM alumno_curso ac 
                             WHERE ac.Estado = 'Activo'";
                 break;
 

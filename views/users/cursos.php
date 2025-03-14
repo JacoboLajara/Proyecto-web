@@ -55,7 +55,7 @@
                     📄 Listado de Cursos con Módulos y Unidades
                 </a>
             </li>
-            <li><a href="#"><i class="fas fa-bell"></i> Ver Notificaciones</a></li>
+            <!-- <li><a href="#"><i class="fas fa-bell"></i> Ver Notificaciones</a></li> -->
             <li><a href="/logout.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
         </ul>
     </div>
