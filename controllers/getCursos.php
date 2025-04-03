@@ -32,7 +32,7 @@ if ($rol === 'Profesor') {
     $query = $conn->prepare("SELECT c.ID_Curso, c.Nombre, c.Tipo, c.Tipo_cuota, c.Duracion_Horas, c.Precio_Curso, 
                                     pc.Fecha_Matricula, pc.Estado
                               FROM profesor_curso pc
-                              JOIN Curso c ON pc.ID_Curso = c.ID_Curso
+                              JOIN curso c ON pc.ID_Curso = c.ID_Curso
                               WHERE pc.ID_Profesor = ?");
     
     // Verificar si la consulta se preparó correctamente

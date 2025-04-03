@@ -267,6 +267,28 @@ CREATE TABLE Asignacion_Horario (
     FOREIGN KEY (ID_Curso) REFERENCES Curso(ID_Curso)
 );
 
+CREATE TABLE Registro_Horario (
+    ID_Registro INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Usuario INT NOT NULL,
+    Fecha DATE NOT NULL,
+
+    Hora_Entrada_Mañana TIME DEFAULT NULL,
+    Hora_Salida_Mañana TIME DEFAULT NULL,
+    Hora_Entrada_Tarde TIME DEFAULT NULL,
+    Hora_Salida_Tarde TIME DEFAULT NULL,
+
+    Tipo_Jornada ENUM('Completa', 'Parcial_Mañana', 'Parcial_Tarde', 'Turno') DEFAULT 'Completa',
+    Tipo_Dia ENUM('Ordinario', 'Vacaciones', 'Baja', 'Asuntos_Propios', 'Permiso') DEFAULT 'Ordinario',
+
+    Observaciones TEXT,
+    Justificante_URL VARCHAR(255) DEFAULT NULL,  -- enlace al justificante PDF o imagen
+
+    Fecha_Registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (ID_Usuario) REFERENCES Usuario(ID_Usuario) ON DELETE CASCADE
+);
+
+
 
 
 -- Aplicación de los privilegios

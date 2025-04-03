@@ -72,6 +72,7 @@ echo "</pre>";*/
                     <li><a href="/mainpage.php?route=createHorario"><i class="fas fa-calendar-alt"></i> Asignar Horarios</a></li>
                     <li><a href="/mainpage.php?route=recibos"><i class="fas fa-clipboard"></i> Gestión de Recibos</a></li>
                     <li><a href="/mainpage.php?route=createNotificacion"><i class="fas fa-bell"></i> Gestión de Notificaciones</a></li>
+                    <li><a href="/mainpage.php?route=createHorarioEmpleado"><i class="fas fa-clock"></i> Control Horario</a></li>
                     <li><a href="ayuda.php"><i class="fas fa-question-circle"></i> Ayuda</a></li>
 
                 <?php elseif ($rol === 'Personal_No_Docente'): ?>
@@ -85,6 +86,7 @@ echo "</pre>";*/
                     <li><a href="/mainpage.php?route=createHorario"><i class="fas fa-calendar-alt"></i> Asignar Horarios</a></li>
                     <li><a href="/mainpage.php?route=recibos"><i class="fas fa-clipboard"></i> Gestión de Recibos</a></li>
                     <li><a href="/mainpage.php?route=createNotificacion"><i class="fas fa-bell"></i> Gestión de Notificaciones</a></li>
+                    <li><a href="/mainpage.php?route=createHorarioEmpleado"><i class="fas fa-clock"></i> Control Horario</a></li>
                     <li><a href="ayuda.php"><i class="fas fa-question-circle"></i> Ayuda</a></li>
 
 

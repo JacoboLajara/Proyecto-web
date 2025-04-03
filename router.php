@@ -11,6 +11,7 @@ require_once __DIR__ . '/controllers/NotasController.php';
 require_once __DIR__ . '/controllers/HorariosController.php';
 require_once __DIR__ . '/controllers/RecibosController.php';
 require_once __DIR__ . '/controllers/NotificacionController.php';
+require_once __DIR__ . '/controllers/RegistroHorarioController.php';
 require_once __DIR__ . '/init.php';
 
 // Registrar la solicitud en debug.log
@@ -382,6 +383,20 @@ switch ($route) {
     case 'gestionarEdicionCursos':
         require_once __DIR__ . '/views/users/EdicionCursos.php';
         exit;
+
+    case 'storeHorarioEmpleado':
+        if (ob_get_length())
+            ob_clean();
+        header('Content-Type: application/json; charset=utf-8');
+        $controller = new RegistroHorarioController();
+        $controller->store();
+        exit;
+
+    case 'createHorarioEmpleado':
+        $controller = new RegistroHorarioController();
+        $controller->create();
+        exit;
+
 
 
     default:
