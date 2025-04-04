@@ -267,9 +267,10 @@ CREATE TABLE Asignacion_Horario (
     FOREIGN KEY (ID_Curso) REFERENCES Curso(ID_Curso)
 );
 
+-- Crear la tabla desde horarios
 CREATE TABLE Registro_Horario (
     ID_Registro INT AUTO_INCREMENT PRIMARY KEY,
-    ID_Usuario INT NOT NULL,
+    ID_Usuario VARCHAR(20) NOT NULL,
     Fecha DATE NOT NULL,
 
     Hora_Entrada_Mañana TIME DEFAULT NULL,
@@ -281,11 +282,15 @@ CREATE TABLE Registro_Horario (
     Tipo_Dia ENUM('Ordinario', 'Vacaciones', 'Baja', 'Asuntos_Propios', 'Permiso') DEFAULT 'Ordinario',
 
     Observaciones TEXT,
-    Justificante_URL VARCHAR(255) DEFAULT NULL,  -- enlace al justificante PDF o imagen
+    Justificante_URL VARCHAR(255) DEFAULT NULL,
 
     Fecha_Registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
-    FOREIGN KEY (ID_Usuario) REFERENCES Usuario(ID_Usuario) ON DELETE CASCADE
+    -- Relación con Usuario por DNI_NIE
+    CONSTRAINT FK_Registro_Usuario
+        FOREIGN KEY (ID_Usuario)
+        REFERENCES Usuario(DNI_NIE)
+        ON DELETE CASCADE
 );
 
 

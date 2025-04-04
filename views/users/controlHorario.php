@@ -1,99 +1,106 @@
+<?php
+require_once __DIR__ . '/../../init.php';
+include __DIR__ . '/../../config/conexion.php';
+
+// Verificar si el usuario está autenticado y tiene el rol de Alumno.
+if (!isset($_SESSION['usuario']) || $_SESSION['rol'] !== 'Personal_No_Docente') {
+    header('Location: ../../login.php');
+    exit();
+}
+
+$idPersonal = $_SESSION['usuario'] ?? null;
+if (!$idPersonal) {
+    die("Error: No se pudo identificar al empleado.");
+}
+
+// Obtener el nombre completo del alumno desde la base de datos
+$nombreCompleto = '';
+$sql = "SELECT Nombre, Apellido1, Apellido2 FROM personal_no_docente WHERE ID_Personal = ?";
+if ($stmt = $conn->prepare($sql)) {
+    $stmt->bind_param("s", $idPersonal);
+    $stmt->execute();
+    $stmt->bind_result($nombre, $apellido1, $apellido2);
+    if ($stmt->fetch()) {
+        $nombreCompleto = trim("$nombre $apellido1 $apellido2");
+    }
+    $stmt->close();
+} else {
+    die("Error en la consulta: " . $conn->error);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>Control de Horario</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Control Horario Diario</title>
     <link rel="stylesheet" href="../../CSS/formularios.css" />
+
+    <style>
+        .registro-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .registro-table th,
+        .registro-table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .btn-fichar {
+            padding: 6px 12px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
+<script src="/js/controlHorario.js"></script>
+
 <body class="bg-light">
     <div class="container mt-5">
-        <h1>Registro de Horario Diario</h1>
+        <h1>Registro de Jornada - <?php echo $nombreCompleto; ?></h1>
+        <p><strong>Fecha:</strong> <span id="fechaActual"></span></p>
 
-        <form id="formHorario">
-            <input type="hidden" name="ID_Usuario" id="ID_Usuario" value="<?= $_SESSION['usuario']['ID_Usuario'] ?>">
+        <table class="registro-table">
+            <thead>
+                <tr>
+                    <th>Turno</th>
+                    <th>Entrada</th>
+                    <th>Salida</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mañana</td>
+                    <td id="entradaM">--:--</td>
+                    <td id="salidaM">--:--</td>
+                </tr>
+                <tr>
+                    <td>Tarde</td>
+                    <td id="entradaT">--:--</td>
+                    <td id="salidaT">--:--</td>
+                </tr>
+            </tbody>
+        </table>
 
-            <div>
-                <label>Fecha:</label>
-                <input type="date" name="Fecha" id="Fecha" required>
-            </div>
+        <div id="botonesTurno" style="margin-top: 20px;">
+            <!-- Los botones se generarán dinámicamente -->
+        </div>
 
-            <div>
-                <label>Hora Entrada Mañana:</label>
-                <input type="time" name="Hora_Entrada_Mañana">
-            </div>
-
-            <div>
-                <label>Hora Salida Mañana:</label>
-                <input type="time" name="Hora_Salida_Mañana">
-            </div>
-
-            <div>
-                <label>Hora Entrada Tarde:</label>
-                <input type="time" name="Hora_Entrada_Tarde">
-            </div>
-
-            <div>
-                <label>Hora Salida Tarde:</label>
-                <input type="time" name="Hora_Salida_Tarde">
-            </div>
-
-            <div>
-                <label>Tipo de Jornada:</label>
-                <select name="Tipo_Jornada" required>
-                    <option value="Completa">Completa</option>
-                    <option value="Parcial_Mañana">Parcial Mañana</option>
-                    <option value="Parcial_Tarde">Parcial Tarde</option>
-                    <option value="Turno">Turno</option>
-                </select>
-            </div>
-
-            <div>
-                <label>Tipo de Día:</label>
-                <select name="Tipo_Dia" required>
-                    <option value="Ordinario">Ordinario</option>
-                    <option value="Vacaciones">Vacaciones</option>
-                    <option value="Baja">Baja</option>
-                    <option value="Asuntos_Propios">Asuntos Propios</option>
-                    <option value="Permiso">Permiso</option>
-                </select>
-            </div>
-
-            <div>
-                <label>Observaciones:</label>
-                <textarea name="Observaciones"></textarea>
-            </div>
-
-            <div>
-                <label>URL del justificante (PDF, imagen, etc):</label>
-                <input type="url" name="Justificante_URL" placeholder="https://...">
-            </div>
-
-            <button type="submit">Guardar Registro</button>
-        </form>
-
-        <div id="respuesta" class="mt-3"></div>
+        <div id="respuesta" style="margin-top: 20px;"></div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $('#formHorario').submit(function (e) {
-            e.preventDefault();
-
-            const datos = Object.fromEntries(new FormData(this).entries());
-
-            $.ajax({
-                url: '../../mainpage.php?route=storeHorarioEmpleado',
-                type: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify(datos),
-                success: function (response) {
-                    $('#respuesta').html(`<div class="alert alert-${response.success ? 'success' : 'danger'}">${response.message}</div>`);
-                },
-                error: function () {
-                    $('#respuesta').html('<div class="alert alert-danger">❌ Error al enviar los datos</div>');
-                }
-            });
-        });
+        console.log("✅ jQuery cargado");
+        window.ID_USUARIO = <?php echo json_encode($_SESSION['usuario'] ?? null); ?>;
     </script>
+    <script src="/js/controlHorario.js"></script>
+
+
 </body>
+
 </html>

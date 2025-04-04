@@ -397,6 +397,13 @@ switch ($route) {
         $controller->create();
         exit;
 
+    case 'listarPorUsuario':
+        header('Content-Type: application/json; charset=utf-8');
+        $controller = new RegistroHorarioController();
+        $controller->listarPorUsuario();
+        exit;
+
+
 
 
     default:

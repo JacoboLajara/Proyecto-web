@@ -73,3 +73,30 @@ DEBUG (init.php) - session_id(): be29ddbb6aa8eaee3ef74c031e435328
 Conexión exitosa
 DEBUG (init.php) - session_id(): 9e908464d9dc23310fa3bcf579f1095a
 Conexión exitosa
+DEBUG (init.php) - session_id(): e39104f10336f4dfd24ae6f91c695dae
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): e39104f10336f4dfd24ae6f91c695dae
+Conexión exitosa
+Conexión exitosa
+Conexión exitosa
+Conexión exitosa
+DEBUG (panelAlumno.php) - session_id(): e39104f10336f4dfd24ae6f91c695dae
+DEBUG (panelAlumno.php) - Usuario en sesión: 11223344C
+DEBUG (panelAlumno.php) - Rol en sesión: Profesor
+DEBUG (init.php) - session_id(): 0a001a685b532467e7f15db86ec0f37c
+Conexión exitosa
+DEBUG (init.php) - session_id(): 0a001a685b532467e7f15db86ec0f37c
+Conexión exitosa
+DEBUG (init.php) - session_id(): 4401500d45b3922dd3de5db8fa6dbb73
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 4401500d45b3922dd3de5db8fa6dbb73
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): ad1ef307bbef29e8d4d37cb8f5f2e907
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 45505f936ca8c3f9109391bb7862ffa6
+Conexión exitosa
+Conexión exitosa
