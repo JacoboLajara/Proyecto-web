@@ -10,39 +10,86 @@ class RegistroHorarioModel
 
     public function insertarRegistro($datos)
     {
-        // Asegurar que todos los campos existen (si no, null)
+        // Asegurar todos los campos con valores por defecto
         $datos = array_merge([
-            'Hora_Entrada_Mañana' => null,
-            'Hora_Salida_Mañana' => null,
+            'Hora_Entrada_Manana' => null,
+            'Hora_Salida_Manana' => null,
             'Hora_Entrada_Tarde' => null,
             'Hora_Salida_Tarde' => null,
-            'Tipo_Jornada' => null,
-            'Tipo_Dia' => null,
-            'Observaciones' => null,
+            'Tipo_Jornada' => 'Completa',
+            'Tipo_Dia' => 'Ordinario',
+            'Observaciones' => '',
             'Justificante_URL' => null
         ], $datos);
-    
-        $sql = "INSERT INTO Registro_Horario (
-                    ID_Usuario, Fecha,
-                    Hora_Entrada_Mañana, Hora_Salida_Mañana,
-                    Hora_Entrada_Tarde, Hora_Salida_Tarde,
-                    Tipo_Jornada, Tipo_Dia,
-                    Observaciones, Justificante_URL
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    
-        $stmt = $this->conn->prepare($sql);
-        if (!$stmt) {
-            file_put_contents('debug.log', "❌ Error prepare(): " . $this->conn->error . "\n", FILE_APPEND);
+
+        // Comprobar si ya existe registro para este usuario y fecha
+        $sqlCheck = "SELECT ID_Registro FROM Registro_Horario WHERE ID_Usuario = ? AND Fecha = ?";
+        $stmtCheck = $this->conn->prepare($sqlCheck);
+        $stmtCheck->bind_param("ss", $datos['ID_Usuario'], $datos['Fecha']);
+        $stmtCheck->execute();
+        $result = $stmtCheck->get_result();
+
+        if ($result->num_rows > 0) {
+            // Ya existe: actualizar solo el campo que viene con valor
+            $registro = $result->fetch_assoc();
+            $idRegistro = $registro['ID_Registro'];
+
+            // Determinar qué campo se ha enviado
+            $camposHorarios = [
+                'Hora_Entrada_Manana',
+                'Hora_Salida_Manana',
+                'Hora_Entrada_Tarde',
+                'Hora_Salida_Tarde'
+            ];
+
+            foreach ($camposHorarios as $campo) {
+                if (!empty($datos[$campo])) {
+                    $campoActualizar = $campo;
+                    $valorActualizar = $datos[$campo];
+                    break;
+                }
+            }
+
+            if (!isset($campoActualizar)) {
+                file_put_contents('debug.log', "⚠️ Ningún campo de horario válido recibido para actualizar\n", FILE_APPEND);
+                return false;
+            }
+
+            $sqlUpdate = "UPDATE Registro_Horario SET $campoActualizar = ? WHERE ID_Registro = ?";
+            $stmtUpdate = $this->conn->prepare($sqlUpdate);
+            $stmtUpdate->bind_param("si", $valorActualizar, $idRegistro);
+
+            $resultado = $stmtUpdate->execute();
+            if (!$resultado) {
+                file_put_contents('debug.log', "❌ Error en UPDATE: " . $stmtUpdate->error . "\n", FILE_APPEND);
+            } else {
+                file_put_contents('debug.log', "✅ $campoActualizar actualizado a $valorActualizar para ID_Registro $idRegistro\n", FILE_APPEND);
+            }
+
+            return $resultado;
+        }
+
+        // No existe: hacer INSERT
+        $sqlInsert = "INSERT INTO Registro_Horario (
+            ID_Usuario, Fecha,
+            Hora_Entrada_Manana, Hora_Salida_Manana,
+            Hora_Entrada_Tarde, Hora_Salida_Tarde,
+            Tipo_Jornada, Tipo_Dia,
+            Observaciones, Justificante_URL
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        $stmtInsert = $this->conn->prepare($sqlInsert);
+        if (!$stmtInsert) {
+            file_put_contents('debug.log', "❌ Error prepare INSERT: " . $this->conn->error . "\n", FILE_APPEND);
             return false;
         }
-    
-        // Asegúrate de que todos los campos son cadenas de texto (ID incluido si es DNI)
-        $stmt->bind_param(
+
+        $stmtInsert->bind_param(
             "ssssssssss",
             $datos['ID_Usuario'],
             $datos['Fecha'],
-            $datos['Hora_Entrada_Mañana'],
-            $datos['Hora_Salida_Mañana'],
+            $datos['Hora_Entrada_Manana'],
+            $datos['Hora_Salida_Manana'],
             $datos['Hora_Entrada_Tarde'],
             $datos['Hora_Salida_Tarde'],
             $datos['Tipo_Jornada'],
@@ -50,18 +97,19 @@ class RegistroHorarioModel
             $datos['Observaciones'],
             $datos['Justificante_URL']
         );
-    
-        $resultado = $stmt->execute();
-    
+
+        $resultado = $stmtInsert->execute();
+
         if (!$resultado) {
-            file_put_contents('debug.log', "❌ Error execute(): " . $stmt->error . "\n", FILE_APPEND);
+            file_put_contents('debug.log', "❌ Error en INSERT: " . $stmtInsert->error . "\n", FILE_APPEND);
         } else {
-            file_put_contents('debug.log', "✅ Registro insertado correctamente\n", FILE_APPEND);
+            file_put_contents('debug.log', "✅ Registro insertado para {$datos['ID_Usuario']} el {$datos['Fecha']}\n", FILE_APPEND);
         }
-    
+
         return $resultado;
     }
-    
+
+
 
     public function obtenerPorUsuarioYFecha($idUsuario, $fecha)
     {

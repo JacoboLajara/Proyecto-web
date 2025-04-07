@@ -57,7 +57,7 @@ if ($stmt = $conn->prepare($sql)) {
         }
     </style>
 </head>
-<script src="/js/controlHorario.js"></script>
+
 
 <body class="bg-light">
     <div class="container mt-5">
@@ -93,12 +93,18 @@ if ($stmt = $conn->prepare($sql)) {
         <div id="respuesta" style="margin-top: 20px;"></div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Pasar el ID de usuario al JS -->
     <script>
-        console.log("✅ jQuery cargado");
         window.ID_USUARIO = <?php echo json_encode($_SESSION['usuario'] ?? null); ?>;
     </script>
+
+    <!-- Cargar primero jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Luego tu script, sin 'defer' -->
     <script src="/js/controlHorario.js"></script>
+</body>
 
 
 </body>
