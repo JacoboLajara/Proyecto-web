@@ -92,4 +92,49 @@ class RegistroHorarioController
         echo json_encode(['success' => true, 'datos' => $resultados]);
         exit;
     }
+
+    public function listarSemanaActualPorUsuario()
+    {
+        header('Content-Type: application/json; charset=utf-8');
+
+        $idUsuario = $_GET['idUsuario'] ?? null;
+        if (!$idUsuario) {
+            echo json_encode(['success' => false, 'message' => 'ID de usuario no proporcionado']);
+            exit;
+        }
+
+        // Calcular lunes de esta semana
+        $hoy = new DateTime();
+        $lunes = clone $hoy;
+        $lunes->modify('monday this week');
+
+        $inicio = $lunes->format('Y-m-d');
+        $fin = $hoy->format('Y-m-d');
+
+        $resultados = $this->model->obtenerPorUsuarioYRango($idUsuario, $inicio, $fin);
+
+        echo json_encode(['success' => true, 'datos' => $resultados]);
+        exit;
+    }
+
+    public function exportarHorarioPDF()
+    {
+        require_once __DIR__ . '/../exportadores/ExportadorHorarioPDF.php';
+        exit; // El script genera y descarga el PDF directamente
+    }
+    
+    public function exportarHorarioExcel()
+    {
+        require_once __DIR__ . '/../exportadores/ExportadorHorarioExcel.php';
+        exit; // El script genera y descarga el Excel directamente
+    }
+    
+private function getLunesActual()
+{
+    $diaSemana = date('w'); // 0 (domingo) a 6 (sábado)
+    $offset = $diaSemana === '0' ? 6 : $diaSemana - 1;
+    return date('Y-m-d', strtotime("-$offset days"));
+}
+
+
 }

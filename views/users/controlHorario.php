@@ -2,7 +2,6 @@
 require_once __DIR__ . '/../../init.php';
 include __DIR__ . '/../../config/conexion.php';
 
-// Verificar si el usuario está autenticado y tiene el rol de Alumno.
 if (!isset($_SESSION['usuario']) || $_SESSION['rol'] !== 'Personal_No_Docente') {
     header('Location: ../../login.php');
     exit();
@@ -13,7 +12,6 @@ if (!$idPersonal) {
     die("Error: No se pudo identificar al empleado.");
 }
 
-// Obtener el nombre completo del alumno desde la base de datos
 $nombreCompleto = '';
 $sql = "SELECT Nombre, Apellido1, Apellido2 FROM personal_no_docente WHERE ID_Personal = ?";
 if ($stmt = $conn->prepare($sql)) {
@@ -34,13 +32,14 @@ if ($stmt = $conn->prepare($sql)) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Control Horario Diario</title>
+    <title>Control Horario Semanal</title>
     <link rel="stylesheet" href="../../CSS/formularios.css" />
-
     <style>
         .registro-table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
         }
 
         .registro-table th,
@@ -48,65 +47,99 @@ if ($stmt = $conn->prepare($sql)) {
             padding: 10px;
             border: 1px solid #ccc;
             text-align: center;
+            vertical-align: middle;
+        }
+
+        .registro-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .registro-table thead {
+            background-color: #007bff;
+            color: white;
         }
 
         .btn-fichar {
             padding: 6px 12px;
-            margin: 0 5px;
+            margin: 10px 5px;
+            cursor: pointer;
+        }
+
+        .export-buttons {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .export-buttons button {
+            padding: 8px 16px;
+            margin: 5px;
+            font-weight: bold;
             cursor: pointer;
         }
     </style>
 </head>
 
-
 <body class="bg-light">
     <div class="container mt-5">
-        <h1>Registro de Jornada - <?php echo $nombreCompleto; ?></h1>
-        <p><strong>Fecha:</strong> <span id="fechaActual"></span></p>
+        <h1>Registro Semanal de Jornada - <?php echo $nombreCompleto; ?></h1>
+        <p><strong>Hoy:</strong> <span id="fechaActual"></span></p>
 
-        <table class="registro-table">
+        <table class="registro-table" id="tablaSemanal">
             <thead>
                 <tr>
+                    <th>Día</th>
                     <th>Turno</th>
                     <th>Entrada</th>
                     <th>Salida</th>
+                    <th>Horas</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Mañana</td>
-                    <td id="entradaM">--:--</td>
-                    <td id="salidaM">--:--</td>
-                </tr>
-                <tr>
-                    <td>Tarde</td>
-                    <td id="entradaT">--:--</td>
-                    <td id="salidaT">--:--</td>
-                </tr>
+                <!-- Filas dinámicas generadas por JS -->
             </tbody>
         </table>
 
-        <div id="botonesTurno" style="margin-top: 20px;">
-            <!-- Los botones se generarán dinámicamente -->
+        <!-- Botones para fichar (generados por JS) -->
+        <div id="botonesTurno" style="margin-top: 20px;"></div>
+
+        <!-- Línea divisoria -->
+        <hr style="margin: 40px 0;">
+
+        <!-- Botones de exportación -->
+        <!-- Filtros y exportaciones -->
+        <hr style="margin: 40px 0;">
+
+        <div class="export-buttons">
+            <form method="GET" action="/exportadores/ExportadorHorarioPDF.php" style="display:inline-block;">
+                <label for="inicio">Desde:</label>
+                <input type="date" name="inicio" value="<?php echo date('Y-m-d', strtotime('monday this week')); ?>"
+                    required>
+                <label for="fin">Hasta:</label>
+                <input type="date" name="fin" value="<?php echo date('Y-m-d'); ?>" required>
+                <button type="submit">Exportar a PDF</button>
+            </form>
+
+            <form method="GET" action="/exportadores/ExportadorHorarioExcel.php"
+                style="display:inline-block; margin-left: 20px;">
+                <label for="inicio">Desde:</label>
+                <input type="date" name="inicio" value="<?php echo date('Y-m-d', strtotime('monday this week')); ?>"
+                    required>
+                <label for="fin">Hasta:</label>
+                <input type="date" name="fin" value="<?php echo date('Y-m-d'); ?>" required>
+                <button type="submit">Exportar a Excel</button>
+            </form>
         </div>
 
+
+        <!-- Mensajes -->
         <div id="respuesta" style="margin-top: 20px;"></div>
     </div>
 
-
-    <!-- Pasar el ID de usuario al JS -->
     <script>
         window.ID_USUARIO = <?php echo json_encode($_SESSION['usuario'] ?? null); ?>;
     </script>
-
-    <!-- Cargar primero jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- Luego tu script, sin 'defer' -->
     <script src="/js/controlHorario.js"></script>
-</body>
-
-
 </body>
 
 </html>

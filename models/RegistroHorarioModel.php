@@ -23,18 +23,16 @@ class RegistroHorarioModel
         ], $datos);
 
         // Comprobar si ya existe registro para este usuario y fecha
-        $sqlCheck = "SELECT ID_Registro FROM Registro_Horario WHERE ID_Usuario = ? AND Fecha = ?";
+        $sqlCheck = "SELECT * FROM Registro_Horario WHERE ID_Usuario = ? AND Fecha = ?";
         $stmtCheck = $this->conn->prepare($sqlCheck);
         $stmtCheck->bind_param("ss", $datos['ID_Usuario'], $datos['Fecha']);
         $stmtCheck->execute();
         $result = $stmtCheck->get_result();
 
         if ($result->num_rows > 0) {
-            // Ya existe: actualizar solo el campo que viene con valor
             $registro = $result->fetch_assoc();
             $idRegistro = $registro['ID_Registro'];
 
-            // Determinar qué campo se ha enviado
             $camposHorarios = [
                 'Hora_Entrada_Manana',
                 'Hora_Salida_Manana',
@@ -46,6 +44,25 @@ class RegistroHorarioModel
                 if (!empty($datos[$campo])) {
                     $campoActualizar = $campo;
                     $valorActualizar = $datos[$campo];
+                    $valorAnterior = array_key_exists($campo, $registro) ? ($registro[$campo] ?? 'NULL') : 'NULL';
+
+
+
+                    if ((string) $valorAnterior !== (string) $valorActualizar) {
+                        $exitoHistorial = $this->registrarHistorial(
+                            $idRegistro,
+                            $campoActualizar,
+                            $valorAnterior,
+                            $valorActualizar,
+                            $_SESSION['usuario']
+                        );
+
+                        if (!$exitoHistorial) {
+                            file_put_contents('debug.log', "⚠️ Fallo al insertar en Historial_Horario\n", FILE_APPEND);
+                            // Pero no detenemos la ejecución
+                        }
+                    }
+
                     break;
                 }
             }
@@ -61,7 +78,7 @@ class RegistroHorarioModel
 
             $resultado = $stmtUpdate->execute();
             if (!$resultado) {
-                file_put_contents('debug.log', "❌ Error en UPDATE: " . $stmtUpdate->error . "\n", FILE_APPEND);
+                file_put_contents('debug.log', "❌ Error actualizando $campoActualizar: " . $stmtUpdate->error . "\n", FILE_APPEND);
             } else {
                 file_put_contents('debug.log', "✅ $campoActualizar actualizado a $valorActualizar para ID_Registro $idRegistro\n", FILE_APPEND);
             }
@@ -110,12 +127,47 @@ class RegistroHorarioModel
     }
 
 
+    private function registrarHistorial($idRegistro, $campo, $valorAnterior, $valorNuevo, $usuarioModificador)
+    {
+        file_put_contents('debug.log', "🛠 registrarHistorial() con: ID=$idRegistro, Campo=$campo, Anterior=$valorAnterior, Nuevo=$valorNuevo, Usuario=$usuarioModificador\n", FILE_APPEND);
+
+        $sql = "INSERT INTO Historial_Horario (ID_Registro, Campo_Modificado, Valor_Anterior, Valor_Nuevo, Modificado_Por)
+            VALUES (?, ?, ?, ?, ?)";
+
+        $stmt = $this->conn->prepare($sql);
+        if (!$stmt) {
+            file_put_contents('debug.log', "❌ Error prepare(): " . $this->conn->error . "\n", FILE_APPEND);
+            return false;
+        }
+
+        $stmt->bind_param(
+            "issss",
+            $idRegistro,
+            $campo,
+            $valorAnterior,
+            $valorNuevo,
+            $usuarioModificador
+        );
+
+        $result = $stmt->execute();
+
+        if (!$result) {
+            file_put_contents('debug.log', "❌ ERROR ejecutando registrarHistorial(): " . $stmt->error . "\n", FILE_APPEND);
+        } else {
+            file_put_contents('debug.log', "✅ Historial insertado correctamente\n", FILE_APPEND);
+        }
+
+        return $result;
+    }
+
+
+
 
     public function obtenerPorUsuarioYFecha($idUsuario, $fecha)
     {
         $sql = "SELECT * FROM Registro_Horario WHERE ID_Usuario = ? AND Fecha = ?";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("is", $idUsuario, $fecha);
+        $stmt->bind_param("ss", $idUsuario, $fecha);
         $stmt->execute();
         return $stmt->get_result()->fetch_assoc();
     }
@@ -124,7 +176,7 @@ class RegistroHorarioModel
     {
         $sql = "SELECT * FROM Registro_Horario WHERE ID_Usuario = ? AND Fecha BETWEEN ? AND ? ORDER BY Fecha";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("iss", $idUsuario, $inicio, $fin);
+        $stmt->bind_param("sss", $idUsuario, $inicio, $fin);
         $stmt->execute();
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }

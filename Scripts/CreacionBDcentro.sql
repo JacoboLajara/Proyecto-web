@@ -293,6 +293,18 @@ CREATE TABLE Registro_Horario (
         ON DELETE CASCADE
 );
 
+-- Historial_Horario para registrar cualquier modificación
+CREATE TABLE Historial_Horario (
+    ID_Historial INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Registro INT NOT NULL,
+    Campo_Modificado VARCHAR(50),
+    Valor_Anterior TIME,
+    Valor_Nuevo TIME,
+    Fecha_Cambio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    Modificado_Por VARCHAR(50),
+    FOREIGN KEY (ID_Registro) REFERENCES Registro_Horario(ID_Registro) ON DELETE CASCADE
+);
+
 
 
 

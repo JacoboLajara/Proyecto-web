@@ -403,6 +403,13 @@ switch ($route) {
         $controller->listarPorUsuario();
         exit;
 
+        case 'exportarHorarioPDF':
+            (new RegistroHorarioController())->exportarHorarioPDF();
+            break;
+        case 'exportarHorarioExcel':
+            (new RegistroHorarioController())->exportarHorarioExcel();
+            break;
+
 
 
 
