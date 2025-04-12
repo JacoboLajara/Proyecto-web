@@ -1,0 +1,871 @@
+DEBUG (init.php) - session_id(): 9c5c4fe6ca9eff89bd71a1fc776ebd01
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9c5c4fe6ca9eff89bd71a1fc776ebd01
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-08&fin=2025-04-08 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9c5c4fe6ca9eff89bd71a1fc776ebd01
+Conexión exitosa
+Método: POST - URI: /mainpage.php?route=storeHorarioEmpleado - IP: ::1
+Valor de route : storeHorarioEmpleado
+Conexión exitosa
+🟨 Datos recibidos para insertar horario: {"ID_Usuario":"77777777A","Fecha":"2025-04-08","Tipo_Jornada":"Completa","Tipo_Dia":"Ordinario","Observaciones":"","Justificante_URL":null,"Hora_Salida_Tarde":"19:25"}
+🛠 registrarHistorial() con: ID=76, Campo=Hora_Salida_Tarde, Anterior=NULL, Nuevo=19:25, Usuario=77777777A
+DEBUG (init.php) - session_id(): 9c5c4fe6ca9eff89bd71a1fc776ebd01
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9c5c4fe6ca9eff89bd71a1fc776ebd01
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-08&fin=2025-04-08 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9c5c4fe6ca9eff89bd71a1fc776ebd01
+Conexión exitosa
+Método: POST - URI: /mainpage.php?route=storeHorarioEmpleado - IP: ::1
+Valor de route : storeHorarioEmpleado
+Conexión exitosa
+🟨 Datos recibidos para insertar horario: {"ID_Usuario":"77777777A","Fecha":"2025-04-08","Tipo_Jornada":"Completa","Tipo_Dia":"Ordinario","Observaciones":"","Justificante_URL":null,"Hora_Salida_Tarde":"19:30"}
+🛠 registrarHistorial() con: ID=76, Campo=Hora_Salida_Tarde, Anterior=NULL, Nuevo=19:30, Usuario=77777777A
+✅ Historial insertado correctamente
+✅ Hora_Salida_Tarde actualizado a 19:30 para ID_Registro 76
+DEBUG (init.php) - session_id(): 9c5c4fe6ca9eff89bd71a1fc776ebd01
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9c5c4fe6ca9eff89bd71a1fc776ebd01
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-08&fin=2025-04-08 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9c5c4fe6ca9eff89bd71a1fc776ebd01
+DEBUG (init.php) - Sesión expirada
+DEBUG (init.php) - session_id(): 9c5c4fe6ca9eff89bd71a1fc776ebd01
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 9c5c4fe6ca9eff89bd71a1fc776ebd01
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): 9c5c4fe6ca9eff89bd71a1fc776ebd01
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 9c5c4fe6ca9eff89bd71a1fc776ebd01
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 77777777A
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 77777777A
+DEBUG (login.php) - el password guardado es: $2y$10$56XPh8vmQTM3Ek0jG7qB.uoA4PQtQcj6/tNQQBEib.ccbPSF4Zp4C
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 77777777A
+DEBUG (init.php) - session_id(): a71aeb04aac6745c36243b35f9227c2d
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): a71aeb04aac6745c36243b35f9227c2d
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-07&fin=2025-04-08 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): a71aeb04aac6745c36243b35f9227c2d
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): a71aeb04aac6745c36243b35f9227c2d
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-07&fin=2025-04-08 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): a71aeb04aac6745c36243b35f9227c2d
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): a71aeb04aac6745c36243b35f9227c2d
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-07&fin=2025-04-08 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): a71aeb04aac6745c36243b35f9227c2d
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): a71aeb04aac6745c36243b35f9227c2d
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-07&fin=2025-04-08 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): a71aeb04aac6745c36243b35f9227c2d
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): a71aeb04aac6745c36243b35f9227c2d
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-07&fin=2025-04-08 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 12cc670012c1abc1930e1b370cb6f8e3
+Conexión exitosa
+Método: GET - URI: /mainpage.php - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): 12cc670012c1abc1930e1b370cb6f8e3
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 12cc670012c1abc1930e1b370cb6f8e3
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): 12cc670012c1abc1930e1b370cb6f8e3
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 12cc670012c1abc1930e1b370cb6f8e3
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 77777777A
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 77777777A
+DEBUG (login.php) - el password guardado es: $2y$10$56XPh8vmQTM3Ek0jG7qB.uoA4PQtQcj6/tNQQBEib.ccbPSF4Zp4C
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 77777777A
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: POST - URI: /mainpage.php?route=storeHorarioEmpleado - IP: ::1
+Valor de route : storeHorarioEmpleado
+Conexión exitosa
+🟨 Datos recibidos para insertar horario: {"ID_Usuario":"77777777A","Fecha":"2025-04-09","Tipo_Jornada":"Completa","Tipo_Dia":"Ordinario","Observaciones":"","Justificante_URL":null,"Hora_Entrada_Tarde":"17:40"}
+✅ Registro insertado para 77777777A el 2025-04-09
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: POST - URI: /mainpage.php?route=storeHorarioEmpleado - IP: ::1
+Valor de route : storeHorarioEmpleado
+Conexión exitosa
+🟨 Datos recibidos para insertar horario: {"ID_Usuario":"77777777A","Fecha":"2025-04-09","Tipo_Jornada":"Completa","Tipo_Dia":"Ordinario","Observaciones":"","Justificante_URL":null,"Hora_Salida_Tarde":"17:45"}
+🛠 registrarHistorial() con: ID=77, Campo=Hora_Salida_Tarde, Anterior=NULL, Nuevo=17:45, Usuario=77777777A
+✅ Historial insertado correctamente
+✅ Hora_Salida_Tarde actualizado a 17:45 para ID_Registro 77
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=exportarHorarioPDF - IP: ::1
+Valor de route : exportarHorarioPDF
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=exportarHorarioPDF - IP: ::1
+Valor de route : exportarHorarioPDF
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=exportarHorarioPDF - IP: ::1
+Valor de route : exportarHorarioPDF
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=exportarHorarioPDF - IP: ::1
+Valor de route : exportarHorarioPDF
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=exportarHorarioPDF - IP: ::1
+Valor de route : exportarHorarioPDF
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=exportarHorarioPDF - IP: ::1
+Valor de route : exportarHorarioPDF
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=exportarHorarioPDF - IP: ::1
+Valor de route : exportarHorarioPDF
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 9209e3ab7ff18bff32e02d79fae5eb90
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=77777777A&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 3fb411995a13d4807ca4ad4b9f8eed05
+Conexión exitosa
+Método: GET - URI: / - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): 3fb411995a13d4807ca4ad4b9f8eed05
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 3fb411995a13d4807ca4ad4b9f8eed05
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): 3fb411995a13d4807ca4ad4b9f8eed05
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 3fb411995a13d4807ca4ad4b9f8eed05
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 29048298B
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Campos incompletos
+DEBUG (init.php) - session_id(): 3fb411995a13d4807ca4ad4b9f8eed05
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 3fb411995a13d4807ca4ad4b9f8eed05
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 29048298T
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Campos incompletos
+DEBUG (init.php) - session_id(): 3fb411995a13d4807ca4ad4b9f8eed05
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 3fb411995a13d4807ca4ad4b9f8eed05
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 29048609T
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 29048609T
+DEBUG (login.php) - el password guardado es: $2y$12$WVe74BqrXyTHalI8oXZkh.UjlDihe2D.f.lN0uhg1LLQSXjWAPIpi
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 29048609T
+DEBUG (init.php) - session_id(): cfa0ca03bce1aa56bcf2eb1bc622f352
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): cfa0ca03bce1aa56bcf2eb1bc622f352
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): cfa0ca03bce1aa56bcf2eb1bc622f352
+Conexión exitosa
+Método: POST - URI: /mainpage.php?route=storeHorarioEmpleado - IP: ::1
+Valor de route : storeHorarioEmpleado
+Conexión exitosa
+🟨 Datos recibidos para insertar horario: {"ID_Usuario":"29048609T","Fecha":"2025-04-09","Tipo_Jornada":"Completa","Tipo_Dia":"Ordinario","Observaciones":"","Justificante_URL":null,"Hora_Entrada_Tarde":"19:25"}
+DEBUG (init.php) - session_id(): 74b452527a52748506d66a8d93331b25
+Conexión exitosa
+Método: GET - URI: / - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): 74b452527a52748506d66a8d93331b25
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 74b452527a52748506d66a8d93331b25
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): 74b452527a52748506d66a8d93331b25
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 74b452527a52748506d66a8d93331b25
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 29048609T
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 29048609T
+DEBUG (login.php) - el password guardado es: $2y$12$WVe74BqrXyTHalI8oXZkh.UjlDihe2D.f.lN0uhg1LLQSXjWAPIpi
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 29048609T
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: POST - URI: /mainpage.php?route=storeHorarioEmpleado - IP: ::1
+Valor de route : storeHorarioEmpleado
+Conexión exitosa
+🟨 Datos recibidos para insertar horario: {"ID_Usuario":"29048609T","Fecha":"2025-04-09","Tipo_Jornada":"Completa","Tipo_Dia":"Ordinario","Observaciones":"","Justificante_URL":null,"Hora_Entrada_Tarde":"19:29"}
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: POST - URI: /mainpage.php?route=storeHorarioEmpleado - IP: ::1
+Valor de route : storeHorarioEmpleado
+Conexión exitosa
+🟨 Datos recibidos para insertar horario: {"ID_Usuario":"29048609T","Fecha":"2025-04-09","Tipo_Jornada":"Completa","Tipo_Dia":"Ordinario","Observaciones":"","Justificante_URL":null,"Hora_Entrada_Tarde":"19:38"}
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: POST - URI: /mainpage.php?route=storeHorarioEmpleado - IP: ::1
+Valor de route : storeHorarioEmpleado
+Conexión exitosa
+🟨 Datos recibidos para insertar horario: {"ID_Usuario":"29048609T","Fecha":"2025-04-09","Tipo_Jornada":"Completa","Tipo_Dia":"Ordinario","Observaciones":"","Justificante_URL":null,"Hora_Entrada_Tarde":"19:38"}
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: POST - URI: /mainpage.php?route=storeHorarioEmpleado - IP: ::1
+Valor de route : storeHorarioEmpleado
+Conexión exitosa
+🟨 Datos recibidos para insertar horario: {"ID_Usuario":"29048609T","Fecha":"2025-04-09","Tipo_Jornada":"Completa","Tipo_Dia":"Ordinario","Observaciones":"","Justificante_URL":null,"Hora_Entrada_Tarde":"19:40"}
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: POST - URI: /mainpage.php?route=storeHorarioEmpleado - IP: ::1
+Valor de route : storeHorarioEmpleado
+Conexión exitosa
+🟨 Datos recibidos para insertar horario: {"ID_Usuario":"29048609T","Fecha":"2025-04-09","Tipo_Jornada":"Completa","Tipo_Dia":"Ordinario","Observaciones":"","Justificante_URL":null,"Hora_Entrada_Tarde":"19:43"}
+✅ Registro insertado para 29048609T el 2025-04-09
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: POST - URI: /mainpage.php?route=storeHorarioEmpleado - IP: ::1
+Valor de route : storeHorarioEmpleado
+Conexión exitosa
+🟨 Datos recibidos para insertar horario: {"ID_Usuario":"29048609T","Fecha":"2025-04-09","Tipo_Jornada":"Completa","Tipo_Dia":"Ordinario","Observaciones":"","Justificante_URL":null,"Hora_Salida_Tarde":"19:44"}
+🛠 registrarHistorial() con: ID=1, Campo=Hora_Salida_Tarde, Anterior=NULL, Nuevo=19:44, Usuario=29048609T
+✅ Historial insertado correctamente
+✅ Hora_Salida_Tarde actualizado a 19:44 para ID_Registro 1
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): fc2f6ab2534fbb67646f82168911f80f
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-09 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 6640a3e972e0ec8bb480bd850c22ab0b
+Conexión exitosa
+Método: GET - URI: / - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): 6640a3e972e0ec8bb480bd850c22ab0b
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 6640a3e972e0ec8bb480bd850c22ab0b
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): 6640a3e972e0ec8bb480bd850c22ab0b
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 6640a3e972e0ec8bb480bd850c22ab0b
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 29048609T
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 29048609T
+DEBUG (login.php) - el password guardado es: $2y$12$WVe74BqrXyTHalI8oXZkh.UjlDihe2D.f.lN0uhg1LLQSXjWAPIpi
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 29048609T
+DEBUG (init.php) - session_id(): 230be7bd49b2d07241223742f05b3419
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 230be7bd49b2d07241223742f05b3419
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-12 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 7e1177abea62022aba4183d9e8288c6a
+Conexión exitosa
+Método: GET - URI: / - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): 7e1177abea62022aba4183d9e8288c6a
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 7e1177abea62022aba4183d9e8288c6a
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): 7e1177abea62022aba4183d9e8288c6a
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 7e1177abea62022aba4183d9e8288c6a
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 29048609T
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 29048609T
+DEBUG (login.php) - el password guardado es: $2y$12$WVe74BqrXyTHalI8oXZkh.UjlDihe2D.f.lN0uhg1LLQSXjWAPIpi
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 29048609T
+DEBUG (init.php) - session_id(): 398b4f2fa2f4063c984c14961c1c0437
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 398b4f2fa2f4063c984c14961c1c0437
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-12 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 398b4f2fa2f4063c984c14961c1c0437
+Conexión exitosa
+Método: POST - URI: /mainpage.php?route=storeHorarioEmpleado - IP: ::1
+Valor de route : storeHorarioEmpleado
+Conexión exitosa
+🟨 Datos recibidos para insertar horario: {"ID_Usuario":"29048609T","Fecha":"2025-04-12","Tipo_Jornada":"Completa","Tipo_Dia":"Ordinario","Observaciones":"","Justificante_URL":null,"Hora_Entrada_Manana":"09:50"}
+✅ Registro insertado para 29048609T el 2025-04-12
+DEBUG (init.php) - session_id(): 398b4f2fa2f4063c984c14961c1c0437
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 398b4f2fa2f4063c984c14961c1c0437
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-12 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 398b4f2fa2f4063c984c14961c1c0437
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 398b4f2fa2f4063c984c14961c1c0437
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-12 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 398b4f2fa2f4063c984c14961c1c0437
+Conexión exitosa
+Método: POST - URI: /mainpage.php?route=storeHorarioEmpleado - IP: ::1
+Valor de route : storeHorarioEmpleado
+Conexión exitosa
+🟨 Datos recibidos para insertar horario: {"ID_Usuario":"29048609T","Fecha":"2025-04-12","Tipo_Jornada":"Completa","Tipo_Dia":"Ordinario","Observaciones":"","Justificante_URL":null,"Hora_Salida_Manana":"09:56"}
+🛠 registrarHistorial() con: ID=2, Campo=Hora_Salida_Manana, Anterior=NULL, Nuevo=09:56, Usuario=29048609T
+✅ Historial insertado correctamente
+✅ Hora_Salida_Manana actualizado a 09:56 para ID_Registro 2
+DEBUG (init.php) - session_id(): 398b4f2fa2f4063c984c14961c1c0437
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 398b4f2fa2f4063c984c14961c1c0437
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-12 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): bb92975635b3956d39d384d2151190ae
+Conexión exitosa
+Método: GET - URI: / - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): bb92975635b3956d39d384d2151190ae
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): bb92975635b3956d39d384d2151190ae
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): bb92975635b3956d39d384d2151190ae
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): bb92975635b3956d39d384d2151190ae
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 29048609T
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 29048609T
+DEBUG (login.php) - el password guardado es: $2y$12$WVe74BqrXyTHalI8oXZkh.UjlDihe2D.f.lN0uhg1LLQSXjWAPIpi
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 29048609T
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-12 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: / - IP: ::1
+Valor de route : home
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 27de24ca555277a5453c45f7abf3a645
+DEBUG (login.php) - Usuario en sesión: 29048609T
+DEBUG (login.php) - Rol en sesión: Personal_No_Docente
+DEBUG (login.php) - Usuario ya autenticado, redirigiendo a backoffice
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-12 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-12 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-12 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-12 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-12 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-12 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-12 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-12 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-12 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-12 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-12 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: POST - URI: /mainpage.php?route=storeHorarioEmpleado - IP: ::1
+Valor de route : storeHorarioEmpleado
+Conexión exitosa
+🟨 Datos recibidos para insertar horario: {"ID_Usuario":"29048609T","Fecha":"2025-04-12","Tipo_Jornada":"Completa","Tipo_Dia":"Ordinario","Observaciones":"","Justificante_URL":null,"Hora_Entrada_Manana":"10:16"}
+✅ Registro insertado para 29048609T el 2025-04-12
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-12 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+DEBUG (init.php) - Sesión expirada
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 27de24ca555277a5453c45f7abf3a645
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (init.php) - session_id(): 27de24ca555277a5453c45f7abf3a645
+Conexión exitosa
+DEBUG (login.php) - Inicio - session_id(): 27de24ca555277a5453c45f7abf3a645
+DEBUG (login.php) - Usuario en sesión: No definido
+DEBUG (login.php) - Rol en sesión: No definido
+DEBUG (login.php) - Procesando inicio de sesión para usuario: 29048609T
+DEBUG (login.php) - Procesando usuario con : 123456
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 29048609T
+DEBUG (login.php) - el password guardado es: $2y$12$WVe74BqrXyTHalI8oXZkh.UjlDihe2D.f.lN0uhg1LLQSXjWAPIpi
+DEBUG (login.php) - Inicio de sesión exitoso para usuario: 29048609T
+DEBUG (init.php) - session_id(): d1e361e67585703117a919964d114893
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=createHorarioEmpleado - IP: ::1
+Valor de route : createHorarioEmpleado
+Conexión exitosa
+Conexión exitosa
+DEBUG (init.php) - session_id(): d1e361e67585703117a919964d114893
+Conexión exitosa
+Método: GET - URI: /mainpage.php?route=listarPorUsuario&idUsuario=29048609T&inicio=2025-04-07&fin=2025-04-12 - IP: ::1
+Valor de route : listarPorUsuario
+Conexión exitosa
