@@ -12,6 +12,7 @@ require_once __DIR__ . '/controllers/HorariosController.php';
 require_once __DIR__ . '/controllers/RecibosController.php';
 require_once __DIR__ . '/controllers/NotificacionController.php';
 require_once __DIR__ . '/controllers/RegistroHorarioController.php';
+require_once __DIR__ . '/controllers/EncuestasController.php';
 require_once __DIR__ . '/init.php';
 
 // Registrar la solicitud en debug.log
@@ -22,10 +23,10 @@ $route = isset($_GET['route']) ? trim($_GET['route']) : 'home';
 file_put_contents('debug.log', "Valor de route : $route\n", FILE_APPEND);
 
 // Verificación del rol para redirección específica
-if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'Alumno') {
-    header('Location: /views/alumnos/backAlumnos.php');  // Redirige al panel de alumno
-    exit();
-}
+//if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'Alumno') {
+  //  header('Location: /views/alumnos/backAlumnos.php');  // Redirige al panel de alumno
+    //exit();
+//}
 
 // Manejo de rutas
 switch ($route) {
@@ -403,17 +404,33 @@ switch ($route) {
         $controller->listarPorUsuario();
         exit;
 
-        case 'exportarHorarioPDF':
-            (new RegistroHorarioController())->exportarHorarioPDF();
-            break;
-        case 'exportarHorarioExcel':
-            (new RegistroHorarioController())->exportarHorarioExcel();
-            break;
+    case 'exportarHorarioPDF':
+        (new RegistroHorarioController())->exportarHorarioPDF();
+        break;
+    case 'exportarHorarioExcel':
+        (new RegistroHorarioController())->exportarHorarioExcel();
+        break;
+    case 'encuestas':
+        $controller = new EncuestasController();
+        // Si llegan datos por POST, guardamos; en otro caso mostramos el formulario
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $controller->store();
+        } else {
+            $controller->index();
+        }
+        exit;
 
-
+    case 'verEncuestas':  // opcional, si quieres distinta ruta para listado o filtros
+        $controller = new EncuestasController();
+        $controller->index();  // o un método diferente para filtrar/mostrar informes
+        exit;
 
 
     default:
-        require_once __DIR__ . '/mainpage.php';
+        if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'Alumno') {
+            require_once __DIR__ . '/views/alumnos/backAlumnos.php';
+        } else {
+            require_once __DIR__ . '/mainpage.php';
+        }
         break;
 }

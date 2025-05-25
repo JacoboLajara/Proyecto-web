@@ -316,6 +316,44 @@ CREATE TABLE Control_Integridad (
     Observaciones TEXT
 );
 
+-- 1) Cabecera común a todas las encuestas
+CREATE TABLE Encuesta (
+    ID_Encuesta   INT             AUTO_INCREMENT PRIMARY KEY,
+    Tipo          ENUM('Centro','Profesor') NOT NULL,
+    ID_Alumno     VARCHAR(9)      NOT NULL,
+    ID_Curso      VARCHAR(12)     NOT NULL,
+    ID_Profesor   VARCHAR(9)      NULL,                -- solo para Tipo='Profesor'
+    Fecha         DATETIME        NOT NULL DEFAULT NOW(),
+    FOREIGN KEY (ID_Alumno)   REFERENCES Alumno(ID_Alumno),
+    FOREIGN KEY (ID_Curso)    REFERENCES Curso(ID_Curso),
+    FOREIGN KEY (ID_Profesor) REFERENCES Profesor(ID_Profesor),
+    INDEX idx_enc_curso_fecha (ID_Curso, Fecha),
+    INDEX idx_enc_curso_tipo   (ID_Curso, Tipo),
+    INDEX idx_enc_profesor     (ID_Profesor)
+);
+
+-- 2) Detalle de respuestas de la encuesta del Centro
+CREATE TABLE Encuesta_Centro_Detalle (
+    ID_Detalle     INT             AUTO_INCREMENT PRIMARY KEY,
+    ID_Encuesta    INT             NOT NULL,
+    CodigoPregunta VARCHAR(10)     NOT NULL,  -- 'q1','q2_1',...,'q5','q6'
+    TextoPregunta  VARCHAR(255)    NOT NULL,
+    Valoracion     TINYINT         NULL,      -- 1–10 para q1…q4, NULL para q5/q6
+    Comentario     TEXT            NULL,      -- solo se usa para q5 y q6
+    FOREIGN KEY (ID_Encuesta) REFERENCES Encuesta(ID_Encuesta)
+);
+
+-- 3) Detalle de respuestas de la encuesta del Profesor
+CREATE TABLE Encuesta_Profesor_Detalle (
+    ID_Detalle     INT             AUTO_INCREMENT PRIMARY KEY,
+    ID_Encuesta    INT             NOT NULL,
+    CodigoPregunta VARCHAR(10)     NOT NULL,  -- 'pq1_1',...,'pq1_7','pq2'
+    TextoPregunta  VARCHAR(255)    NOT NULL,
+    Valoracion     TINYINT         NULL,      -- 1–10 para pq1_*, NULL para pq2
+    Comentario     TEXT            NULL,      -- solo se usa para pq2
+    FOREIGN KEY (ID_Encuesta) REFERENCES Encuesta(ID_Encuesta)
+);
+
 
 
 

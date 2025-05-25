@@ -1,0 +1,389 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ... (other styles) ... */
+
+.likert-scale {
+    display: flex;
+    justify-content: space-around; 
+    align-items: flex-start; 
+    flex-wrap: wrap;
+    padding: 10px 0;
+}
+
+.likert-scale label {
+    display: flex;
+    flex-direction: column; /* Stack text and emoji vertically */
+    align-items: center;   /* Center content horizontally */
+    cursor: pointer;
+    padding: 8px 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+    text-align: center;
+    min-width: 70px; 
+}
+
+.likert-scale input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.likert-scale label:hover {
+    background-color: #ecf0f1;
+}
+
+/* Styling for the text part of the label (which is now the first child before <br>) */
+.likert-scale label > *:first-child { 
+    font-size: 0.7em; /* Smaller text size for "Excelente", "Bueno", etc. */
+    color: #555;
+    margin-bottom: 3px; /* Space between text and emoji */
+    line-height: 1.2; /* Adjust line height for the text */
+}
+
+/* Styling for the emoji part of the label (which is now after <br>) */
+.likert-scale label > br + * { 
+    font-size: 1.5em; /* Emoji size */
+}
+
+
+/* If a sub-question only has emoji (no text before <br>) */
+.likert-scale label:not(:has(br)) { /* Target labels that DON'T have a <br> (meaning only emoji) */
+    font-size: 1.5em; /* Emoji size for these cases */
+}
+.likert-scale label:not(:has(br)) > *:first-child { /* Ensure this doesn't apply to emoji-only labels */
+    font-size: inherit; /* Reset font size if it was targeted by the general first-child rule */
+    margin-bottom: 0;
+}
+
+
+.likert-scale label.selected-label {
+    background-color: #3498db;
+    /* color: white; */ /* This would make the text AND emoji white, which might not be desired for emojis */
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+}
+
+.likert-scale label.selected-label > *:first-child { /* Text within selected label */
+    color: white;
+}
+/* For emojis in selected state, they usually have their own color. If you want them white: */
+/* .likert-scale label.selected-label > br + * {
+    color: white; 
+} */
+
+
+/* ... (rest of existing styles) ... */
+
+/* Make sure input fields in form-info are styled for editing */
+.info-item input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff; /* Ensure background is white for editable fields */
+    font-size: 0.9em;
+    color: #333; /* Ensure text color is visible */
+}
+
+.info-item input[type="text"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    outline: none;
+}
+
+.chart-container {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Ensure canvas is responsive within its container */
+#scoreChart {
+    max-width: 100%;
+    height: auto !important; /* Override Chart.js inline style if needed for responsiveness */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.form-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #eef1f2;
+    border-radius: 5px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+}
+
+.info-item label {
+    margin-right: 8px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+.info-item input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fdfdfd;
+    font-size: 0.9em;
+}
+
+.note {
+    font-style: italic;
+    color: #7f8c8d;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+fieldset {
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #fdfdfd;
+}
+
+fieldset legend {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #2980b9;
+    padding: 0 10px;
+    margin-left: 10px;
+}
+
+.question-group {
+    margin-bottom: 25px;
+}
+
+.question-main {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+.sub-question {
+    margin-left: 20px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 3px solid #3498db;
+    border-radius: 0 4px 4px 0;
+}
+
+.sub-question p {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.likert-scale {
+    display: flex;
+    justify-content: space-around; /* Distributes items evenly */
+    align-items: flex-start; /* Align items at the top if text wraps */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    padding: 10px 0;
+}
+
+.likert-scale label {
+    display: flex;
+    flex-direction: column; /* Stack emoji and text vertically */
+    align-items: center; /* Center content horizontally */
+    cursor: pointer;
+    padding: 8px 5px; /* Add some padding */
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+    text-align: center;
+    min-width: 70px; /* Ensure some minimum width for better spacing */
+}
+
+.likert-scale input[type="radio"] {
+    /* Hide the default radio button */
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.likert-scale label:hover {
+    background-color: #ecf0f1;
+}
+
+.likert-scale input[type="radio"]:checked + br + preceding-sibling::before, /* For labels with <br> */
+.likert-scale input[type="radio"]:checked + br + span, /* If you use span for text */
+.likert-scale input[type="radio"]:checked ~ span, /* If text is in a span after emoji */
+.likert-scale input[type="radio"]:checked ~ br + *, /* General case for text after br */
+.likert-scale input[type="radio"]:checked + * /* For labels without <br> or when emoji is first */
+{
+   /* This is tricky with just emoji and text in label.
+      We style the label itself when checked */
+}
+
+
+.likert-scale label {
+    font-size: 1.5em; /* Emoji size */
+}
+
+.likert-scale label br + * { /* Target text after <br> */
+    font-size: 0.7em; /* Text size relative to emoji */
+    color: #555;
+    margin-top: 3px;
+}
+/* More robust styling for selected radio */
+.likert-scale input[type="radio"]:checked + * { /* If emoji is first, applies to emoji */
+    /* No specific style needed here if we style the whole label */
+}
+.likert-scale label.selected-label {
+    background-color: #3498db;
+    color: white; /* Changes text color inside label */
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+}
+.likert-scale label.selected-label br + * { /* Text within selected label */
+    color: white;
+}
+
+
+textarea {
+    width: calc(100% - 22px); /* Full width minus padding and border */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1em;
+    resize: vertical; /* Allow vertical resize only */
+    margin-top: 5px;
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.form-actions button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.form-actions button[type="reset"] {
+    background-color: #e74c3c;
+}
+
+.form-actions button:hover {
+    opacity: 0.9;
+}
+.form-actions button[type="submit"]:hover {
+    background-color: #45a049;
+}
+.form-actions button[type="reset"]:hover {
+    background-color: #c0392b;
+}
+
+
+.report-output {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.report-output h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+#reportContent {
+    white-space: pre-wrap; /* Preserve formatting and allow wrapping */
+    word-wrap: break-word;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    background-color: #fff;
+    padding: 15px;
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .form-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .info-item {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .info-item input[type="text"] {
+        width: calc(100% - 18px); /* Adjust for padding/border */
+    }
+    .likert-scale {
+        justify-content: space-between; /* Better for smaller screens */
+    }
+    .likert-scale label {
+        min-width: 55px; /* Smaller min-width */
+        font-size: 1.3em;
+    }
+     .likert-scale label br + * {
+        font-size: 0.6em;
+    }
+}
+
+@media (max-width: 480px) {
+    .likert-scale label {
+        min-width: 45px;
+        font-size: 1.2em;
+        padding: 6px 3px;
+    }
+    .likert-scale label br + * {
+        font-size: 0.55em;
+    }
+    .form-actions button {
+        padding: 10px 15px;
+        font-size: 1em;
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+    }
+}

@@ -65,6 +65,12 @@ file_put_contents('debug.log', "DEBUG (panelAlumno.php) - Rol en sesión: " . ($
         <ul>
             <!-- <li><i class="fas fa-clipboard"></i>Notas</li>
             <li><i class="fas fa-bell"></i>Notificaciones</li> -->
+            <li>
+                <a href="/router.php?route=encuestas">
+                    <i class="fas fa-poll"></i>
+                    Realizar Encuesta de Satisfacción
+                </a>
+            </li>
             <li><a href="../../listados/CertificadoInscripcion.php"><i class="fas fa-file-download"></i> Descargar
                     Certificados</a></li>
             <li><a href="ayuda.php"><i class="fas fa-question-circle"></i> Ayuda</a></li>
@@ -188,6 +194,12 @@ file_put_contents('debug.log', "DEBUG (panelAlumno.php) - Rol en sesión: " . ($
         </div>
         <!-- Sección de Certificados -->
         <div class="section">
+            <li>
+                <a href="/router.php?route=encuestas">
+                    <i class="fas fa-poll"></i>
+                    Realizar Encuesta de Satisfacción
+                </a>
+            </li>
             <li><a href="../../listados/CertificadoInscripcion.php"><i class="fas fa-file-download"></i> Descargar
                     Certificado de Inscripción</a></li>
 
